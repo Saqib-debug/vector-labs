@@ -1,8 +1,6 @@
 {
   "name": "Vector Labs",
-  "description": "Premium digital infrastructure for the world's most prestigious dental and aesthetic clinics.",
+  "description": "Digital growth systems for dental and aesthetic clinics, including premium websites, patient acquisition, booking flows, and automation.",
   "requestFramePermissions": [],
-  "majorCapabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
+  "majorCapabilities": []
 }

@@ -1,13 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import {
-  Layout,
   MapPin,
-  Sparkles,
-  CalendarCheck,
-  Cpu,
-  Megaphone,
-  Share2,
   Star,
   Search,
   ArrowUpRight,
@@ -15,64 +9,11 @@ import {
   Check,
 } from "lucide-react";
 
-interface EcosystemCard {
-  icon?: any;
-  title: string;
-  description: string;
-  isCTA?: boolean;
-  stage: string;
-}
-
-const ecosystemCards: EcosystemCard[] = [
-  {
-    icon: Megaphone,
-    title: "Meta Ads",
-    description: "High-ROI patient acquisition campaigns on Instagram and Facebook.",
-    stage: "01 / ATTRACT",
-  },
-  {
-    icon: MapPin,
-    title: "Local SEO",
-    description: "Dominate local search queries for high-value treatments in your city.",
-    stage: "02 / POSITION",
-  },
-  {
-    icon: Sparkles,
-    title: "Google Profile",
-    description: "Optimizing your most important social proof and booking asset.",
-    stage: "03 / REPUTATION",
-  },
-  {
-    icon: Layout,
-    title: "Premium Websites",
-    description: "Custom-coded, high-conversion sites designed with Swiss precision.",
-    stage: "04 / THE HUB",
-  },
-  {
-    icon: Cpu,
-    title: "AI Automation",
-    description: "Smart chatbots and workflows that save your team 20+ hours a week.",
-    stage: "05 / ENGAGE",
-  },
-  {
-    icon: CalendarCheck,
-    title: "Booking Systems",
-    description: "Seamless patient scheduling and automated follow-up sequences.",
-    stage: "06 / CONVERT",
-  },
-  {
-    icon: Share2,
-    title: "Social Media",
-    description: "Aesthetic storytelling that builds patient trust before they walk in.",
-    stage: "07 / NURTURE",
-  },
-  {
-    title: "Ready for your ecosystem?",
-    description: "Connect all tools into a single seamless patient acquisition engine.",
-    isCTA: true,
-    stage: "08 / INTEGRATE",
-  },
-];
+import Button from "@/components/ui/Button";
+import Container from "@/components/ui/Container";
+import Section from "@/components/ui/Section";
+import SectionHeader from "@/components/ui/SectionHeader";
+import { ecosystemServices } from "@/data/services";
 
 // Pure CSS & Tailwind mockups for pixel-perfect instant load, absolute layout stability and zero external requests.
 const MetaAdsMockup = () => (
@@ -513,36 +454,40 @@ export default function Ecosystem() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section id="solutions" className="py-24 bg-white relative overflow-visible">
+    <Section id="solutions" className="overflow-visible bg-white">
       {/* Premium ambient glow behind the ecosystem to anchor it as a single system wrapped in an overflow-hidden layer so it doesn't break sticky behavior */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[850px] bg-brand/[0.015] rounded-full blur-3xl" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        {/* Section Header */}
+      <Container className="relative z-10">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 md:mb-20 gap-6" id="ecosystem-header">
-          <div className="flex flex-col items-start">
-            <div className="flex items-center space-x-3 mb-3">
-              <span className="w-10 h-[1.5px] bg-brand" />
-              <span className="text-xs font-semibold tracking-widest text-brand uppercase font-sans">
-                The Solution
-              </span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display tracking-tight text-heading">
-              Our Growth Ecosystem<span className="text-brand">.</span>
-            </h2>
-          </div>
+          <SectionHeader
+            eyebrow="Growth Ecosystem"
+            title="Visibility → Trust → Conversion → Automation → Retention → Growth"
+            description="This is one of the strongest Vector Labs ideas: clinics do not need isolated services, they need a connected system."
+          />
           <p className="text-body max-w-sm lg:text-right font-sans text-sm md:text-base leading-relaxed">
-            Integrated digital tools working together as a single complete patient acquisition engine.
+            Integrated digital tools working together as a single patient acquisition and retention engine.
           </p>
+        </div>
+
+        <div className="mb-10 hidden items-center gap-3 lg:flex">
+          {["Visibility", "Trust", "Conversion", "Automation", "Retention", "Growth"].map((item, index) => (
+            <div key={item} className="flex items-center gap-3">
+              <div className="rounded-full border border-brand/10 bg-brand/[0.03] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand">
+                {item}
+              </div>
+              {index < 5 ? <div className="h-px w-8 bg-gradient-to-r from-brand/40 to-brand/10" /> : null}
+            </div>
+          ))}
         </div>
 
         {/* Sticky-Scroll 2-Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start relative">
           
           {/* Left Column: Sticky Device Mockup Panel */}
-          <div className="hidden lg:block lg:col-span-5 sticky top-32 h-[500px] rounded-3xl bg-slate-50/70 border border-slate-100 p-8 shadow-inner overflow-hidden flex items-center justify-center">
+          <div className="hidden lg:flex lg:col-span-5 sticky top-32 h-[520px] items-center justify-center overflow-hidden rounded-3xl border border-slate-100 bg-slate-50/70 p-8 shadow-inner">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeIndex}
@@ -558,15 +503,15 @@ export default function Ecosystem() {
           </div>
 
           {/* Right Column: Vertically Stacked Cards */}
-          <div className="col-span-1 lg:col-span-7 space-y-6 lg:space-y-8 lg:pb-32">
-            {ecosystemCards.map((card, index) => {
+          <div className="col-span-1 space-y-6 lg:col-span-7 lg:space-y-8 lg:pb-20">
+            {ecosystemServices.map((card, index) => {
               const isActive = index === activeIndex;
 
               if (card.isCTA) {
                 return (
                   <motion.a
                     key={index}
-                    href="#cta"
+                    href="/contact"
                     onViewportEnter={() => setActiveIndex(index)}
                     onMouseEnter={() => setActiveIndex(index)}
                     onClick={() => setActiveIndex(index)}
@@ -576,7 +521,7 @@ export default function Ecosystem() {
                       opacity: isActive ? 1 : 0.45,
                     }}
                     transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                    className={`bg-brand text-white p-8 rounded-2xl flex flex-col justify-between items-start cursor-pointer group shadow-lg transition-all duration-300 min-h-[220px] relative overflow-hidden block ${
+                    className={`relative block min-h-[220px] cursor-pointer overflow-hidden rounded-2xl bg-brand p-8 text-white shadow-lg transition-all duration-300 group ${
                       isActive ? "border-brand shadow-brand/20" : "border-transparent"
                     }`}
                     id="ecosystem-card-cta"
@@ -604,7 +549,7 @@ export default function Ecosystem() {
                       <MockupScreen index={index} />
                     </div>
 
-                    <div className="w-10 h-10 rounded-full bg-white/10 group-hover:bg-white group-hover:text-brand flex items-center justify-center transition-all duration-300 border border-white/20 mt-4">
+                    <div className="mt-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 transition-all duration-300 group-hover:bg-white group-hover:text-brand">
                       <svg
                         className="w-4 h-4 transition-transform duration-300 group-hover:rotate-90 stroke-[2.5]"
                         viewBox="0 0 24 24"
@@ -632,7 +577,7 @@ export default function Ecosystem() {
                     opacity: isActive ? 1 : 0.45,
                   }}
                   transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                  className={`bg-white border p-8 rounded-2xl transition-all duration-300 flex flex-col items-start space-y-6 justify-between min-h-[220px] relative group cursor-pointer ${
+                  className={`relative flex min-h-[220px] cursor-pointer flex-col items-start justify-between space-y-6 rounded-2xl border bg-white p-8 transition-all duration-300 group ${
                     isActive
                       ? "border-brand/45 shadow-[0_12px_30px_-10px_rgba(15,118,110,0.08)]"
                       : "border-slate-100/80 shadow-sm"
@@ -682,7 +627,25 @@ export default function Ecosystem() {
           </div>
 
         </div>
-      </div>
-    </section>
+
+        <div className="mt-14 flex justify-center">
+          <div className="w-full max-w-3xl rounded-[2rem] border border-brand/10 bg-brand/[0.03] px-8 py-8 text-center">
+            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-brand">System Layer CTA</div>
+            <h3 className="mt-3 text-2xl font-bold text-heading md:text-3xl">
+              See how your clinic would fit into this ecosystem
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-body">
+              The point is not to buy random services. It is to identify which layer of visibility,
+              trust, conversion, or automation is holding your clinic back first.
+            </p>
+            <div className="mt-6">
+              <Button href="/contact" icon={<ArrowUpRight className="h-4 w-4" />}>
+                Book a Strategy Call
+              </Button>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </Section>
   );
 }

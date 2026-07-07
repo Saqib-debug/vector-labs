@@ -1,20 +1,44 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Vector Labs
 
-# Run and deploy your AI Studio app
+Vector Labs is a premium marketing site for a clinic-growth agency focused on dental and aesthetic brands. The current build is a React + TypeScript + Vite single-page experience with structured sections for positioning, challenges, services, case studies, process, FAQ, and CTA.
 
-This contains everything you need to run your app locally.
+## Stack
 
-View your app in AI Studio: https://ai.studio/apps/59a56c35-3743-43f6-aa6c-1e02412efcc0
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS v4
+- Motion
+- Lucide React
 
-## Run Locally
+## Project Structure
 
-**Prerequisites:**  Node.js
+```text
+src/
+  components/
+    layout/
+    sections/
+    ui/
+  data/
+  lib/
+  pages/
+```
 
+The site now uses:
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- `pages/Home.tsx` as the app entry page
+- reusable UI primitives for layout and repeated patterns
+- centralized data modules for navigation, services, challenges, case studies, FAQ, and process content
+
+## Local Development
+
+Prerequisite: Node.js
+
+1. Install dependencies with `npm install`
+2. Start the dev server with `npm run dev`
+3. Build for production with `npm run build`
+4. Run type-checking with `npm run lint`
+
+## Environment Variables
+
+No environment variables are currently required for the static marketing site.
