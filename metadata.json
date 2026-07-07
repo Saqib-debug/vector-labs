@@ -1,0 +1,8 @@
+{
+  "name": "Vector Labs",
+  "description": "Premium digital infrastructure for the world's most prestigious dental and aesthetic clinics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
