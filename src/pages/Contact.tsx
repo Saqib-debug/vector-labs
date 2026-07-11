@@ -394,7 +394,7 @@ export default function ContactPage() {
           required
           value={form.location}
           onChange={(event) => updateField("location", event)}
-          placeholder="Dubai, UAE"
+          placeholder="DHA / Johar Town / Faisal Town"
           className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-heading outline-none transition focus:border-brand"
         />
         <FieldError message={errors.location} />
@@ -538,7 +538,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <PageHero
+      {/* <PageHero
         eyebrow="Contact / Strategy Call"
         title="Book a strategy conversation through a real clinic intake flow."
         description="This page now behaves like a proper lead capture route: qualification fields, multi-step UX, validation, next-step clarity, and a cleaner agency feel. For now, submissions are stored locally as a polished prototype until the live backend is connected."
@@ -557,7 +557,7 @@ export default function ContactPage() {
             </div>
           ))}
         </div>
-      </PageHero>
+      </PageHero> */}
 
       <Section className="bg-white">
         <Container>
