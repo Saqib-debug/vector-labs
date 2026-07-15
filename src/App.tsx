@@ -148,7 +148,7 @@ function AppContent() {
           {page}
         </motion.main>
       </AnimatePresence>
-      <StickyMobileCTA />
+      {/* <StickyMobileCTA /> */}
       <Footer />
     </div>
   );
