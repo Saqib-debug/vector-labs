@@ -114,7 +114,7 @@ export default function Challenges() {
   }, []);
 
   return (
-    <Section id="challenges" className="bg-slate-50/50 py-0">
+    <Section id="challenges" className="bg-slate-50/50 py-12 lg:py-0">
       <div
         ref={containerRef}
         className="relative mx-auto max-w-7xl lg:h-[var(--challenge-scroll-height)]"
@@ -123,7 +123,7 @@ export default function Challenges() {
         <div
           ref={sceneRef}
           style={pinStyle}
-          className="py-12 lg:flex lg:min-h-screen lg:items-center lg:py-10"
+          className="lg:flex lg:min-h-screen lg:items-center lg:py-10"
         >
           <Container className="w-full">
             <SectionHeader
@@ -133,7 +133,35 @@ export default function Challenges() {
               className="mb-7 md:mb-9"
             />
 
-            <div className="grid w-full items-center gap-12 lg:grid-cols-[minmax(0,0.86fr)_minmax(460px,0.95fr)] lg:gap-20">
+            <div className="grid gap-4 lg:hidden">
+              {challenges.map((item, index) => {
+                const IconComponent = item.icon;
+                return (
+                  <div
+                    key={item.title}
+                    className="rounded-2xl border border-brand/10 bg-white p-5 shadow-sm"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-brand">
+                        <IconComponent className="h-5 w-5" />
+                      </div>
+                      <div className="min-w-0">
+                        <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-brand">
+                          Problem {String(index + 1).padStart(2, "0")}
+                        </div>
+                        <h3 className="mt-1 text-lg font-bold text-black">{item.title}</h3>
+                        <p className="mt-2 text-sm font-medium leading-relaxed text-slate-500">
+                          {item.subtitle}
+                        </p>
+                      </div>
+                    </div>
+                    <p className="mt-4 text-sm leading-relaxed text-body">{item.description}</p>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="hidden w-full items-center gap-12 lg:grid lg:grid-cols-[minmax(0,0.86fr)_minmax(460px,0.95fr)] lg:gap-20">
               <div className="relative">
                 <div
                   className="relative overflow-hidden"

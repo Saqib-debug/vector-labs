@@ -70,6 +70,13 @@ export default function Navbar() {
     return matchPaths?.includes(pathname) ?? pathname === href;
   };
 
+  const handleMobileNavigate = (href: string) => {
+    setIsOpen(false);
+    setServicesOpen(false);
+    setMobileServicesOpen(false);
+    navigate(href);
+  };
+
   return (
     <header
       id="main-header"
@@ -216,8 +223,9 @@ export default function Navbar() {
 
         <button
           className={cn(
-            "relative z-50 rounded-full p-2 text-white transition-all duration-300 hover:bg-white/10 hover:text-white md:hidden",
-            !useTransparentState && "text-white",
+            "relative z-50 rounded-full border border-transparent bg-transparent p-2 text-brand transition-all duration-300 hover:border-brand/15 hover:bg-white/70 md:hidden",
+            scrolled && !isOpen && "border-white/30 bg-white text-brand shadow-sm hover:bg-white",
+            isOpen && "border-slate-200 bg-white text-slate-950",
           )}
           onClick={() => setIsOpen((open) => !open)}
           aria-label="Toggle navigation menu"
@@ -235,7 +243,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: shouldReduceMotion ? 0.12 : 0.18, ease: DEFAULT_EASE }}
-            className="fixed inset-0 top-0 z-40 overflow-y-auto bg-slate-950/94 backdrop-blur-[52px] md:hidden"
+            className="fixed inset-0 top-0 z-40 overflow-y-auto bg-[#f5f5f5]/96 backdrop-blur-2xl md:hidden"
             id="mobile-drawer"
           >
             <motion.div
@@ -245,10 +253,10 @@ export default function Navbar() {
               transition={{ duration: shouldReduceMotion ? 0.12 : 0.2, ease: DEFAULT_EASE }}
             >
               <Container className="flex min-h-dvh flex-col pt-24 pb-8">
-                <div className="relative flex flex-1 flex-col justify-between rounded-[2rem] border border-white/10 bg-slate-950/74 p-5 shadow-[0_24px_90px_rgba(0,0,0,0.58)] backdrop-blur-[56px]">
+                <div className="relative flex flex-1 flex-col justify-between rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_24px_80px_-45px_rgba(15,23,42,0.55)]">
                   <div>
-                    <div className="mb-4 flex items-center justify-between border-b border-white/10 pb-4">
-                      <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/55">
+                    <div className="mb-4 flex items-center justify-between border-b border-slate-100 pb-4">
+                      <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-brand">
                         Navigation
                       </span>
                       <span className="h-2 w-2 rounded-full bg-brand shadow-[0_0_18px_rgba(0,82,255,0.8)]" />
@@ -259,19 +267,19 @@ export default function Navbar() {
                         const isActive = isRouteActive(item.href, item.matchPaths);
                         const hasChildren = Boolean(item.children?.length);
                         return (
-                          <div key={item.name} className="rounded-2xl border border-white/12 bg-white/[0.045] p-3">
+                          <div key={item.name} className="rounded-2xl border border-slate-200 bg-slate-50 p-3">
                             {hasChildren ? (
                               <button
                                 type="button"
                                 onClick={() => setMobileServicesOpen((open) => !open)}
                                 className={`flex w-full items-center justify-between text-sm font-semibold transition-colors ${
-                                  isActive ? "text-white" : "text-white/86 hover:text-white"
+                                  isActive ? "text-brand" : "text-slate-900 hover:text-brand"
                                 }`}
                                 aria-expanded={mobileServicesOpen}
                               >
                                 <span>{item.name}</span>
                                 <ChevronDown
-                                  className={`h-4 w-4 text-white/45 transition-transform ${
+                                  className={`h-4 w-4 text-slate-400 transition-transform ${
                                     mobileServicesOpen ? "rotate-180 text-brand" : ""
                                   }`}
                                 />
@@ -279,13 +287,16 @@ export default function Navbar() {
                             ) : (
                               <a
                                 href={item.href}
-                                onClick={() => setIsOpen(false)}
+                                onClick={(event) => {
+                                  event.preventDefault();
+                                  handleMobileNavigate(item.href);
+                                }}
                                 className={`flex items-center justify-between text-sm font-semibold transition-colors ${
-                                  isActive ? "text-white" : "text-white/86 hover:text-white"
+                                  isActive ? "text-brand" : "text-slate-900 hover:text-brand"
                                 }`}
                               >
                                 <span>{item.name}</span>
-                                <ArrowRight className={`h-3.5 w-3.5 transition-transform ${isActive ? "text-brand" : "text-white/35"}`} />
+                                <ArrowRight className={`h-3.5 w-3.5 transition-transform ${isActive ? "text-brand" : "text-slate-400"}`} />
                               </a>
                             )}
 
@@ -298,13 +309,16 @@ export default function Navbar() {
                                   transition={{ duration: 0.24, ease: DEFAULT_EASE }}
                                   className="overflow-hidden"
                                 >
-                                  <div className="mt-3 grid gap-1.5 border-t border-white/10 pt-3">
+                                  <div className="mt-3 grid gap-1.5 border-t border-slate-200 pt-3">
                                     {item.children.map((child) => (
                                       <a
                                         key={child.name}
                                         href={child.href}
-                                        onClick={() => setIsOpen(false)}
-                                        className="rounded-xl border border-white/10 bg-slate-900/72 px-3 py-2 text-xs font-medium text-white/78 transition-colors hover:border-brand/35 hover:bg-brand/15 hover:text-white"
+                                        onClick={(event) => {
+                                          event.preventDefault();
+                                          handleMobileNavigate(child.href);
+                                        }}
+                                        className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-700 transition-colors hover:border-brand/25 hover:bg-brand/[0.04] hover:text-brand"
                                       >
                                         {child.name}
                                       </a>
@@ -325,12 +339,15 @@ export default function Navbar() {
                       size="md"
                       icon={<ArrowRight className="h-4 w-4" />}
                       id="btn-book-conversion-mobile"
-                      onClick={() => setIsOpen(false)}
+                      onClick={(event) => {
+                        event.preventDefault();
+                        handleMobileNavigate("/contact");
+                      }}
                       className="w-full"
                     >
                       Book Strategy Call
                     </Button>
-                    <p className="text-center text-xs uppercase tracking-[0.18em] text-white/40">
+                    <p className="text-center text-xs uppercase tracking-[0.18em] text-slate-400">
                       Multi-page business growth site
                     </p>
                   </div>
