@@ -8,6 +8,10 @@ interface PageHeroProps {
   title: string;
   description: string;
   children?: ReactNode;
+  className?: string;
+  eyebrowClassName?: string;
+  titleClassName?: string;
+  descriptionClassName?: string;
 }
 
 export default function PageHero({
@@ -15,16 +19,20 @@ export default function PageHero({
   title,
   description,
   children,
+  className,
+  eyebrowClassName,
+  titleClassName,
+  descriptionClassName,
 }: PageHeroProps) {
   return (
-    <Section className="bg-bg-base">
+    <Section className={className ?? "pt-28 md:pt-32 lg:pt-36"}>
       <Container width="narrow">
         <div className="space-y-6 lg:space-y-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">{eyebrow}</p>
-          <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-heading sm:text-5xl lg:text-6xl">
+          <p className={eyebrowClassName ?? "text-xs font-semibold uppercase tracking-[0.2em] text-brand-light"}>{eyebrow}</p>
+          <h1 className={titleClassName ?? "max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl"}>
             {title}
           </h1>
-          <p className="max-w-3xl text-base leading-relaxed text-body sm:text-lg">{description}</p>
+          <p className={descriptionClassName ?? "max-w-3xl text-base leading-relaxed text-slate-300 sm:text-lg"}>{description}</p>
           {children}
         </div>
       </Container>

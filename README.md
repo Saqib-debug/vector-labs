@@ -1,6 +1,6 @@
 # Vector Labs
 
-Vector Labs is a premium marketing site for a clinic-growth agency focused on dental and aesthetic brands. The current build is a React + TypeScript + Vite single-page experience with structured sections for positioning, challenges, services, case studies, process, FAQ, and CTA.
+Vector Labs is a premium marketing site for a business-growth agency focused on service and online brands. The current build is a React + TypeScript + Vite single-page experience with structured sections for positioning, challenges, services, case studies, process, FAQ, and CTA.
 
 ## Stack
 

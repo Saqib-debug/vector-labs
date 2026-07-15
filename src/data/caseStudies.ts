@@ -4,65 +4,65 @@ import luxeMockupImg from "@/assets/images/luxe_mockup_1783148900737.jpg";
 import type { CaseStudy, CaseStudyDetail } from "@/types";
 
 export const featuredCaseStudy: CaseStudy = {
-  tag: "Aesthetic Transformation",
-  title: "Luxe Skin Clinic",
+  tag: "Online Transformation",
+  title: "Nova Studio",
   description:
-    "Scaling appointment volume via AI-driven automation systems and a premium digital infrastructure.",
+    "Scaling conversion volume via AI-driven automation systems and a premium digital infrastructure.",
   imageSrc: luxeMockupImg,
-  imageAlt: "Luxe Skin Clinic Case Study",
+  imageAlt: "Nova Studio Case Study",
   stats: [
     { value: "14.2x", label: "Estimated ROI" },
-    { value: "+350%", label: "Annual Bookings" },
+    { value: "+350%", label: "Annual Conversions" },
   ],
 };
 
 export const supportingCaseStudy: CaseStudy = {
-  tag: "Prestige Dental Positioning",
-  title: "Aura Dental",
-  description: "Transformation of clinical positioning for a prominent prestige dental brand.",
+  tag: "Premium Service Positioning",
+  title: "Apex Digital",
+  description: "Transformation of business positioning for a prominent prestige service brand.",
   imageSrc: auraMockupImg,
-  imageAlt: "Aura Dental Case Study",
+  imageAlt: "Apex Digital Case Study",
   stats: [
-    { value: "+240%", label: "New Patient Leads" },
+    { value: "+240%", label: "New Client Leads" },
     { value: "0.4s", label: "Load Speed" },
   ],
 };
 
 export const caseStudyCatalog: CaseStudyDetail[] = [
   {
-    clinicType: "Aesthetic Clinic",
-    title: "Luxe Skin Clinic",
-    problem: "The brand felt visually generic and its consultation demand was inconsistent across premium treatments.",
+    businessType: "Online Business",
+    title: "Nova Studio",
+    problem: "The brand felt visually generic and its conversion demand was inconsistent across premium services.",
     solution:
       "Vector Labs rebuilt the positioning layer, website, ad journey, and automation follow-up into one premium acquisition system.",
-    result: "Higher consultation volume, better lead quality, and a clearer premium signal across every patient touchpoint.",
+    result: "Higher conversion volume, better lead quality, and a clearer premium signal across every client touchpoint.",
     servicesUsed: ["Website Design", "Meta Ads", "Automation", "Reporting"],
     timeline: "8 weeks",
     imageSrc: luxeMockupImg,
-    imageAlt: "Luxe Skin Clinic digital growth case study",
+    imageAlt: "Nova Studio digital growth case study",
   },
   {
-    clinicType: "Dental Clinic",
-    title: "Aura Dental",
-    problem: "The clinic needed stronger digital positioning for cosmetic dentistry and a faster, more premium booking experience.",
+    businessType: "Service Business",
+    title: "Apex Digital",
+    problem: "The business needed stronger digital positioning for conversion strategy and a faster, more premium conversion experience.",
     solution:
-      "We redesigned the website, clarified treatment journeys, improved booking UX, and tightened the clinic’s trust and speed signals.",
-    result: "More qualified leads, improved perceived authority, and a faster path from visit to consultation request.",
-    servicesUsed: ["Website Design", "Booking Systems", "Local SEO", "Google Profile"],
+      "We redesigned the website, clarified service journeys, improved conversion UX, and tightened the business’s trust and speed signals.",
+    result: "More qualified leads, improved perceived authority, and a faster path from visit to conversion request.",
+    servicesUsed: ["Website Design", "Conversion Systems", "Local SEO", "Google Profile"],
     timeline: "6 weeks",
     imageSrc: auraMockupImg,
-    imageAlt: "Aura Dental digital positioning case study",
+    imageAlt: "Apex Digital digital positioning case study",
   },
   {
-    clinicType: "Aesthetic Clinic",
-    title: "Atelier Aesthetics",
-    problem: "Too much inquiry friction between Instagram discovery, WhatsApp questions, and actual booked consultations.",
+    businessType: "Online Business",
+    title: "Orbit Commerce",
+    problem: "Too much inquiry friction between Instagram discovery, WhatsApp questions, and actual booked conversions.",
     solution:
       "Vector Labs mapped the funnel across landing pages, trust content, social proof, and qualification steps to remove drop-off.",
-    result: "A cleaner high-ticket consultation funnel with stronger pre-booking trust and better front-desk visibility.",
-    servicesUsed: ["Social Media Systems", "AI Automation", "Booking Workflows", "Analytics"],
+    result: "A cleaner high-ticket conversion funnel with stronger pre-conversion trust and better sales-team visibility.",
+    servicesUsed: ["Social Media Systems", "AI Automation", "Conversion Workflows", "Analytics"],
     timeline: "10 weeks",
     imageSrc: heroMockupImg,
-    imageAlt: "Atelier Aesthetics consultation funnel case study",
+    imageAlt: "Orbit Commerce conversion funnel case study",
   },
 ];

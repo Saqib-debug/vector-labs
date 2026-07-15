@@ -1,4 +1,4 @@
-import { ArrowUpRight, CheckCircle2, MapPinned, SmilePlus, Stethoscope, Syringe } from "lucide-react";
+import { ArrowUpRight, Briefcase, CheckCircle2, Layers3, MapPinned, MousePointerClick } from "lucide-react";
 
 import CTA from "@/components/sections/CTA";
 import Button from "@/components/ui/Button";
@@ -10,31 +10,32 @@ import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { supportingCaseStudy } from "@/data/caseStudies";
 
-const dentalProblems = [
-  "Inconsistent consultation flow for implants, orthodontics, and cosmetic dentistry",
-  "Local competitors outranking stronger clinics on Google Maps and treatment searches",
-  "Old websites that explain services but do not guide patients toward a premium booking decision",
+const serviceProblems = [
+  "Inconsistent lead flow across SEO, paid ads, and conversion pages",
+  "Local competitors outranking stronger businesses on Google Maps and service searches",
+  "Old websites that explain services but do not guide clients toward a premium conversion decision",
 ];
 
-const dentalFeatures = [
-  "Treatment-specific landing pages for implants, Invisalign, smile design, veneers, and cosmetic dentistry",
-  "Doctor credibility blocks, before-and-after storytelling, finance reassurance, and consultation intent cues",
-  "High-trust mobile booking and lead qualification flows for treatment discovery traffic",
+const serviceFeatures = [
+  "Service-specific landing pages for service pages, lead magnets, productized offers, audits, and launch campaigns",
+  "Founder credibility blocks, proof sections, offer clarity, and conversion intent cues",
+  "High-trust mobile conversion and lead qualification flows for service discovery traffic",
 ];
 
 const campaignExamples = [
-  "Implant consultation campaigns focused on trust, authority, and location-specific search demand",
-  "Orthodontic funnels pairing paid traffic with clear smile transformation journeys",
-  "Cosmetic dentistry pages built to position aesthetic outcomes without feeling generic or salesy",
+  "Lead-gen conversion campaigns focused on trust, authority, and location-specific search demand",
+  "Paid funnels paired with clear offer journeys and landing pages",
+  "Conversion strategy pages built to position online outcomes without feeling generic or salesy",
 ];
 
-export default function DentalClinicsPage() {
+export default function ServiceBusinessesPage() {
   return (
     <>
       <PageHero
-        eyebrow="Dental Clinics"
-        title="Digital systems for dental clinics that need more than a nicer website."
-        description="This page speaks directly to dental clinic owners: patient acquisition friction, treatment-specific search strategy, booking journeys, and the digital positioning needed for high-value dentistry."
+        eyebrow="Service Brands"
+        title="Digital systems for service businesses that need more than a nicer website."
+        description="This page speaks directly to service business owners: client acquisition friction, service-specific search strategy, conversion journeys, and the digital positioning needed for high-value services."
+        titleClassName="max-w-4xl text-4xl font-bold tracking-tight text-black sm:text-5xl lg:text-6xl"
       >
         <div className="pt-4">
           <Button href="/contact" icon={<ArrowUpRight className="h-4 w-4" />}>
@@ -43,18 +44,18 @@ export default function DentalClinicsPage() {
         </div>
       </PageHero>
 
-      <Section className="bg-white">
+      <Section>
         <Container>
           <SectionHeader
-            eyebrow="Dental Acquisition Problems"
-            title="The issues that make premium dentistry harder to sell online"
-            description="For dental clinics, growth is rarely blocked by skill. It is blocked by how the clinic is discovered, trusted, and guided into consultation."
+            eyebrow="Service Acquisition Problems"
+            title="The issues that make premium services harder to sell online"
+            description="For service businesses, growth is rarely blocked by skill. It is blocked by how the business is discovered, trusted, and guided into conversion."
             className="mb-16"
           />
           <div className="grid gap-6 md:grid-cols-3">
-            {dentalProblems.map((problem) => (
+            {serviceProblems.map((problem) => (
               <Card key={problem} className="p-6">
-                <Stethoscope className="h-5 w-5 text-brand" />
+                <Briefcase className="h-5 w-5 text-brand" />
                 <p className="mt-4 text-sm leading-relaxed text-body">{problem}</p>
               </Card>
             ))}
@@ -62,18 +63,18 @@ export default function DentalClinicsPage() {
         </Container>
       </Section>
 
-      <Section className="bg-bg-base">
+      <Section>
         <Container>
           <SectionHeader
-            eyebrow="Dental Website Features"
-            title="What a modern dental website needs to do"
-            description="The website has to educate, reassure, differentiate, and convert without overwhelming the patient."
+            eyebrow="Service Website Features"
+            title="What a modern service website needs to do"
+            description="The website has to educate, reassure, differentiate, and convert without overwhelming the client."
             className="mb-16"
           />
           <div className="grid gap-6 lg:grid-cols-3">
-            {dentalFeatures.map((feature) => (
+            {serviceFeatures.map((feature) => (
               <Card key={feature} className="p-6">
-                <SmilePlus className="h-5 w-5 text-brand" />
+                <Layers3 className="h-5 w-5 text-brand" />
                 <p className="mt-4 text-sm leading-relaxed text-body">{feature}</p>
               </Card>
             ))}
@@ -81,19 +82,19 @@ export default function DentalClinicsPage() {
         </Container>
       </Section>
 
-      <Section className="bg-white">
+      <Section>
         <Container>
           <div className="grid gap-8 lg:grid-cols-2">
             <Card className="p-8">
               <SectionHeader
                 eyebrow="SEO + Maps"
-                title="Local search strategy for treatment-led dentistry"
-                description="Vector Labs structures dental search around service lines, cities, and trust signals so the clinic appears where high-intent patients are already searching."
+                title="Local search strategy for service-led services"
+                description="Vector Labs structures service search around service lines, cities, and trust signals so the business appears where high-intent clients are already searching."
               />
               <div className="mt-6 space-y-3">
                 {[
-                  "Cosmetic dentistry and veneer city pages",
-                  "Implant and Invisalign search intent mapping",
+                  "Conversion strategy and veneer city pages",
+                  "Lead-gen and Invisalign search intent mapping",
                   "Google Maps trust signals and profile optimization",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3 text-sm leading-relaxed text-body">
@@ -107,13 +108,13 @@ export default function DentalClinicsPage() {
             <Card tone="highlight" className="p-8">
               <SectionHeader
                 eyebrow="Campaign Examples"
-                title="Examples across implants, orthodontics, and cosmetic dentistry"
-                description="The site now presents dental growth as treatment-specific instead of abstract."
+                title="Examples across lead generation, SEO, and conversion flows"
+                description="The site now presents service growth as service-specific instead of abstract."
               />
               <div className="mt-6 space-y-3">
                 {campaignExamples.map((item) => (
                   <div key={item} className="flex items-start gap-3 text-sm leading-relaxed text-body">
-                    <Syringe className="mt-0.5 h-4 w-4 shrink-0 text-brand" />
+                    <MousePointerClick className="mt-0.5 h-4 w-4 shrink-0 text-brand" />
                     <span>{item}</span>
                   </div>
                 ))}
@@ -123,21 +124,21 @@ export default function DentalClinicsPage() {
         </Container>
       </Section>
 
-      <Section className="bg-bg-base">
+      <Section>
         <Container>
           <div className="grid gap-6 lg:grid-cols-12">
             <Card className="p-8 lg:col-span-5">
               <SectionHeader
-                eyebrow="Booking Funnel"
-                title="From treatment interest to consultation request"
-                description="The booking layer for dental clinics should feel calm and premium while still qualifying the patient properly."
+                eyebrow="Conversion Funnel"
+                title="From service interest to conversion request"
+                description="The conversion layer for service businesses should feel calm and premium while still qualifying the client properly."
               />
               <div className="mt-6 space-y-3">
                 {[
-                  "Treatment discovery page",
+                  "Service discovery page",
                   "Authority and trust reinforcement",
-                  "Consultation qualification form",
-                  "Booking or callback request",
+                  "Conversion qualification form",
+                  "Conversion or callback request",
                 ].map((step, index) => (
                   <div key={step} className="flex items-center gap-3 rounded-2xl border border-slate-100 bg-slate-50/70 px-4 py-3 text-sm text-heading">
                     <span className="flex h-7 w-7 items-center justify-center rounded-full bg-brand text-xs font-bold text-white">
@@ -152,20 +153,20 @@ export default function DentalClinicsPage() {
             <Card className="p-8 lg:col-span-7">
               <SectionHeader
                 eyebrow="Before / After Positioning"
-                title="The shift from generic clinic site to prestige treatment brand"
-                description="This is as much about perceived trust and treatment value as it is about traffic."
+                title="The shift from generic business site to prestige service brand"
+                description="This is as much about perceived trust and service value as it is about traffic."
               />
               <div className="mt-6 grid gap-4 md:grid-cols-2">
                 <div className="rounded-2xl border border-rose-100 bg-rose-50/60 p-5">
                   <div className="text-xs font-semibold uppercase tracking-[0.18em] text-rose-500">Before</div>
                   <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                    Generic treatment pages, weak Google presence, slow mobile UX, and unclear conversion paths.
+                    Generic service pages, weak Google presence, slow mobile UX, and unclear conversion paths.
                   </p>
                 </div>
                 <div className="rounded-2xl border border-brand/15 bg-brand/[0.03] p-5">
                   <div className="text-xs font-semibold uppercase tracking-[0.18em] text-brand">After</div>
                   <p className="mt-3 text-sm leading-relaxed text-slate-700">
-                    Faster premium site, treatment-specific demand capture, cleaner booking handoff, and stronger high-value consultation trust.
+                    Faster premium site, service-specific demand capture, cleaner conversion handoff, and stronger high-value conversion trust.
                   </p>
                 </div>
               </div>
@@ -174,7 +175,7 @@ export default function DentalClinicsPage() {
         </Container>
       </Section>
 
-      <Section className="bg-white">
+      <Section>
         <Container>
           <Card className="grid gap-8 p-8 lg:grid-cols-12 lg:p-10">
             <div className="lg:col-span-7 overflow-hidden rounded-3xl border border-slate-100">
@@ -187,7 +188,7 @@ export default function DentalClinicsPage() {
             </div>
             <div className="lg:col-span-5">
               <SectionHeader
-                eyebrow="Dental Case Study"
+                eyebrow="service Case Study"
                 title={supportingCaseStudy.title}
                 description={supportingCaseStudy.description}
               />
@@ -206,10 +207,10 @@ export default function DentalClinicsPage() {
                   View More Case Studies
                 </Button>
                 <Button
-                  href="/contact?clinicType=Dental%20Clinic&mainGoal=More%20patient%20bookings&source=dental-page"
+                  href="/contact?businessType=Service%20Business&mainGoal=More%20client%20conversions&source=service-page"
                   size="sm"
                 >
-                  Discuss your dental clinic
+                  Discuss your service business
                 </Button>
               </div>
             </div>
@@ -218,11 +219,11 @@ export default function DentalClinicsPage() {
       </Section>
 
       <PageNextStep
-        title="See how this applies to your dental clinic"
-        description="A strong next step for dental owners is to review the proof and then send a strategy request with dental-specific context already selected."
+        title="See how this applies to your service business"
+        description="A strong next step for service owners is to review the proof and then send a strategy request with service-specific context already selected."
         primaryHref="/case-studies"
         primaryLabel="Review Case Studies"
-        secondaryHref="/contact?clinicType=Dental%20Clinic&mainGoal=More%20patient%20bookings&source=dental-next-step"
+        secondaryHref="/contact?businessType=Service%20Business&mainGoal=More%20client%20conversions&source=service-next-step"
         secondaryLabel="Book Strategy Call"
       />
 

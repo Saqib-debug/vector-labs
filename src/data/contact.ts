@@ -9,16 +9,16 @@ import {
 
 import type { FAQItem, FormOption, InfoItem } from "@/types";
 
-export const clinicTypeOptions: FormOption[] = [
-  { label: "Dental Clinic", value: "Dental Clinic" },
-  { label: "Aesthetic Clinic", value: "Aesthetic Clinic" },
-  { label: "Dermatology Clinic", value: "Dermatology Clinic" },
-  { label: "Cosmetic Surgery Clinic", value: "Cosmetic Surgery Clinic" },
-  { label: "Other Private Clinic", value: "Other Private Clinic" },
+export const businessTypeOptions: FormOption[] = [
+  { label: "Service Business", value: "Service Business" },
+  { label: "Online Business", value: "Online Business" },
+  { label: "SaaS Business", value: "SaaS Business" },
+  { label: "Ecommerce Business", value: "Ecommerce Business" },
+  { label: "Other Business", value: "Other Business" },
 ];
 
 export const mainGoalOptions: FormOption[] = [
-  { label: "More patient bookings", value: "More patient bookings" },
+  { label: "More client conversions", value: "More client conversions" },
   { label: "Website redesign", value: "Website redesign" },
   { label: "Google visibility", value: "Google visibility" },
   { label: "Automation", value: "Automation" },
@@ -27,10 +27,10 @@ export const mainGoalOptions: FormOption[] = [
 ];
 
 export const budgetRangeOptions: FormOption[] = [
-  { label: "Under $1,000/month", value: "Under $1,000/month" },
-  { label: "$1,000–$3,000/month", value: "$1,000–$3,000/month" },
-  { label: "$3,000–$5,000/month", value: "$3,000–$5,000/month" },
-  { label: "$5,000+/month", value: "$5,000+/month" },
+  { label: "Under PKR 100,000", value: "Under PKR 100,000" },
+  { label: "PKR 100,000 - 300,000", value: "PKR 100,000 - 300,000" },
+  { label: "PKR 300,000 - 600,000", value: "PKR 300,000 - 600,000" },
+  { label: "PKR 600,000+", value: "PKR 600,000+" },
   { label: "Not sure yet", value: "Not sure yet" },
 ];
 
@@ -39,19 +39,19 @@ export const contactNextSteps: InfoItem[] = [
     icon: ClipboardCheck,
     title: "We review the intake first",
     description:
-      "We look at clinic type, location, goals, and current digital setup before recommending next steps.",
+      "We look at business type, location, goals, and current digital setup before recommending next steps.",
   },
   {
     icon: CalendarDays,
     title: "You get a focused strategy call",
     description:
-      "The first call is meant to diagnose growth bottlenecks around visibility, trust, bookings, or follow-up.",
+      "The first call is meant to diagnose growth bottlenecks around visibility, trust, conversions, or follow-up.",
   },
   {
     icon: ShieldCheck,
     title: "Only qualified-fit projects move forward",
     description:
-      "Vector Labs is positioned for private clinics, so the process stays more tailored and less generic.",
+      "Vector Labs is positioned for private businesses, so the process stays more tailored and less generic.",
   },
 ];
 

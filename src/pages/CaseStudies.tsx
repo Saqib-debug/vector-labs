@@ -16,8 +16,9 @@ export default function CaseStudiesPage() {
     <>
       <PageHero
         eyebrow="Case Studies"
-        title="Proof structured the way a serious clinic website should present it."
+        title="Proof structured the way a serious business website should present it."
         description="This page turns proof into its own destination: featured work, case study cards, metrics, and a clearer explanation of how Vector Labs measures success."
+        titleClassName="max-w-4xl text-4xl font-bold tracking-tight text-black sm:text-5xl lg:text-6xl"
       >
         <div className="pt-4">
           <Button href="/contact" icon={<ArrowUpRight className="h-4 w-4" />}>
@@ -26,7 +27,7 @@ export default function CaseStudiesPage() {
         </div>
       </PageHero>
 
-      <Section className="bg-white">
+      <Section>
         <Container>
           <Card className="grid gap-8 p-8 lg:grid-cols-12 lg:p-10">
             <div className="lg:col-span-7 overflow-hidden rounded-3xl border border-slate-100">
@@ -53,12 +54,12 @@ export default function CaseStudiesPage() {
         </Container>
       </Section>
 
-      <Section className="bg-bg-base">
+      <Section>
         <Container>
           <SectionHeader
             eyebrow="Case Study Grid"
-            title="Clinic proof cards with real agency-site structure"
-            description="Each card now includes clinic type, problem, solution, result, services used, timeline, and a route into contact."
+            title="Business proof cards with real agency-site structure"
+            description="Each card now includes business type, problem, solution, result, services used, timeline, and a route into contact."
             className="mb-16"
           />
           <div className="grid gap-6 lg:grid-cols-3">
@@ -70,7 +71,7 @@ export default function CaseStudiesPage() {
                   </div>
                 ) : null}
                 <div className="flex flex-1 flex-col p-6">
-                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-brand">{study.clinicType}</div>
+                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-brand">{study.businessType}</div>
                   <h3 className="mt-3 text-2xl font-bold text-heading">{study.title}</h3>
                   <div className="mt-5 space-y-3 text-sm leading-relaxed text-body">
                     <p><strong className="text-heading">Problem:</strong> {study.problem}</p>
@@ -80,7 +81,7 @@ export default function CaseStudiesPage() {
                     <p><strong className="text-heading">Timeline:</strong> {study.timeline}</p>
                   </div>
                   <a
-                    href={`/contact?clinicType=${encodeURIComponent(study.clinicType)}&mainGoal=${encodeURIComponent("Full growth system")}&source=case-study-card`}
+                    href={`/contact?businessType=${encodeURIComponent(study.businessType)}&mainGoal=${encodeURIComponent("Full growth system")}&source=case-study-card`}
                     className="mt-6 inline-flex items-center text-sm font-semibold text-brand"
                   >
                     Discuss a similar project
@@ -93,12 +94,12 @@ export default function CaseStudiesPage() {
         </Container>
       </Section>
 
-      <Section className="bg-white">
+      <Section>
         <Container>
           <SectionHeader
             eyebrow="Metrics"
             title="How we frame measurable success"
-            description="Vector Labs is not only interested in how a site looks. The measurement model tracks the system behind consultation growth."
+            description="Vector Labs is not only interested in how a site looks. The measurement model tracks the system behind conversion growth."
             className="mb-16"
           />
           <div className="grid gap-6 md:grid-cols-3">
@@ -114,19 +115,19 @@ export default function CaseStudiesPage() {
         </Container>
       </Section>
 
-      <Section className="bg-bg-base">
+      <Section>
         <Container width="narrow">
           <SectionHeader
             eyebrow="Measurement Philosophy"
             title="How Vector Labs measures success"
-            description="We look beyond vanity signals. The key question is whether the clinic’s digital system creates more qualified demand, stronger trust, cleaner operations, and more booked consultations."
+            description="We look beyond vanity signals. The key question is whether the business’s digital system creates more qualified demand, stronger trust, cleaner operations, and more booked conversions."
             className="mb-12"
           />
           <div className="grid gap-6 md:grid-cols-2">
             {[
-              "Lead quality and consultation intent",
-              "Landing page and booking conversion rate",
-              "Search and maps visibility around treatment demand",
+              "Lead quality and conversion intent",
+              "Landing page and conversion conversion rate",
+              "Search and maps visibility around service demand",
               "Speed, trust, and follow-up responsiveness",
             ].map((item) => (
               <Card key={item} className="p-6">
@@ -140,7 +141,7 @@ export default function CaseStudiesPage() {
 
       <PageNextStep
         title="Use the proof to decide your next conversation"
-        description="If the structure and results feel aligned, the next step is either to review the process or send a strategy request for a similar clinic growth system."
+        description="If the structure and results feel aligned, the next step is either to review the process or send a strategy request for a similar business growth system."
         primaryHref="/contact?mainGoal=Full%20growth%20system&source=case-studies-page"
         primaryLabel="Book Strategy Call"
         secondaryHref="/#process"

@@ -1,4 +1,4 @@
-import { ArrowUpRight, Sparkles, Stethoscope } from "lucide-react";
+import { ArrowUpRight, BriefcaseBusiness, Sparkles } from "lucide-react";
 
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
@@ -8,35 +8,35 @@ import SectionHeader from "@/components/ui/SectionHeader";
 
 const specialties = [
   {
-    title: "Dental Clinics",
-    href: "/dental-clinics",
-    icon: Stethoscope,
+    title: "Service Brands",
+    href: "/service-businesses",
+    icon: BriefcaseBusiness,
     bullets: [
-      "Implants, cosmetic dentistry, orthodontics, and treatment-specific funnels",
-      "Local SEO and Google Maps visibility for high-intent dental searches",
-      "Booking journeys that help front desks manage consultation demand cleanly",
+      "Lead-gens, conversion strategy, SEO, and service-specific funnels",
+      "Local SEO and Google Maps visibility for high-intent service searches",
+      "Conversion journeys that help sales teams manage conversion demand cleanly",
     ],
   },
   {
-    title: "Aesthetic Clinics",
-    href: "/aesthetic-clinics",
+    title: "Online Brands",
+    href: "/online-businesses",
     icon: Sparkles,
     bullets: [
-      "Luxury visual identity, treatment pages, and trust-first consultation flows",
-      "Instagram, WhatsApp, reviews, and booking systems aligned to premium positioning",
-      "Higher-ticket lead qualification for injectable, skin, and facial rejuvenation offers",
+      "Luxury visual identity, service pages, and trust-first conversion flows",
+      "Instagram, WhatsApp, reviews, and conversion systems aligned to premium positioning",
+      "Higher-ticket lead qualification for premium services and digital offers",
     ],
   },
 ];
 
 export default function SpecializationSplit() {
   return (
-    <Section className="bg-bg-base">
+    <Section>
       <Container>
         <SectionHeader
           eyebrow="Specialized Verticals"
-          title="Built for dental and aesthetic clinics"
-          description="Vector Labs does not try to look relevant to everyone. The site now reflects two clear vertical tracks so each clinic owner can see a more precise fit."
+          title="Built for service and online businesses"
+          description="Vector Labs does not try to look relevant to everyone. The site now reflects two clear vertical tracks so each business owner can see a more precise fit."
           className="mb-16"
         />
 

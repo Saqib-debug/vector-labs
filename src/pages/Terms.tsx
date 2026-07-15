@@ -8,11 +8,11 @@ import SectionHeader from "@/components/ui/SectionHeader";
 const termsSections = [
   {
     title: "Website Use",
-    text: "This website exists to present Vector Labs, explain service positioning, and collect clinic inquiries through the contact flow. Content is informational and does not create a formal service agreement by itself.",
+    text: "This website exists to present Vector Labs, explain service positioning, and collect business inquiries through the contact flow. Content is informational and does not create a formal service agreement by itself.",
   },
   {
     title: "Project Fit And Availability",
-    text: "Submitting the form or contacting Vector Labs does not guarantee acceptance of a project. Engagements depend on fit, scope, availability, and alignment with the clinic specialization focus.",
+    text: "Submitting the form or contacting Vector Labs does not guarantee acceptance of a project. Engagements depend on fit, scope, availability, and alignment with the business specialization focus.",
   },
   {
     title: "Future Service Terms",
@@ -29,7 +29,7 @@ export default function TermsPage() {
         description="This page provides a basic legal destination from the footer while the broader operational and contracting system is still being refined."
       />
 
-      <Section className="bg-white">
+      <Section>
         <Container>
           <SectionHeader
             eyebrow="Terms Overview"

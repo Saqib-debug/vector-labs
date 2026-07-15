@@ -49,7 +49,7 @@ export default function Footer() {
   return (
     <footer
       id="main-footer"
-      className="relative overflow-hidden border-t border-slate-200 bg-[radial-gradient(circle_at_top_left,_rgba(15,118,110,0.1),_transparent_35%),linear-gradient(180deg,_#ffffff_0%,_#f7faf9_100%)] pt-20 pb-8"
+      className="relative overflow-hidden border-t border-slate-200 bg-[radial-gradient(circle_at_top_left,_rgba(0,82,255,0.1),_transparent_35%),linear-gradient(180deg,_#ffffff_0%,_#f7faf9_100%)] pt-20 pb-8"
     >
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand/30 to-transparent" />
 
@@ -69,11 +69,11 @@ export default function Footer() {
             </a>
 
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-body">
-              Premium digital growth systems for dental and aesthetic clinics.
+              Premium digital growth systems for service and online businesses.
             </p>
 
             <div className="mt-5 inline-flex rounded-full border border-brand/15 bg-brand/[0.05] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-brand">
-              Websites. SEO. Automation. Booking Systems.
+              Websites. SEO. Automation. Conversion Systems.
             </div>
           </div>
 

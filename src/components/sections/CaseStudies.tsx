@@ -13,7 +13,7 @@ export default function CaseStudies() {
   const { fadeUp, scaleIn, staggerContainer, revealViewport, shouldReduceMotion } = useAnimationVariants();
 
   return (
-    <Section id="portfolio" className="bg-heading text-white">
+    <Section id="portfolio" className="bg-[#f5f5f5] text-heading">
       {/* Decorative gradient overlay */}
       <motion.div
         animate={shouldReduceMotion ? undefined : { x: [0, 24, -12, 0], y: [0, -18, 10, 0], scale: [1, 1.04, 0.98, 1] }}
@@ -30,16 +30,15 @@ export default function CaseStudies() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-20 gap-6" id="portfolio-header">
           <SectionHeader
             eyebrow="Case Study Highlights"
-            title="Representative Clinic Growth Scenarios"
+            title="Representative Business Growth Scenarios"
             description="Until real client metrics are published, these are presented as sample transformation models showing how the system can be applied."
-            inverted
           />
-          <p className="text-slate-400 max-w-sm font-sans text-sm md:text-base leading-relaxed">
-            Premium clinic growth stories with clearer problem, solution, service, and timeline framing.
+          <p className="text-body max-w-sm font-sans text-sm md:text-base leading-relaxed">
+            Premium business growth stories with clearer problem, solution, service, and timeline framing.
           </p>
         </div>
 
-        {/* Case Study 1: Large Featured Horizontal Card (Luxe Skin Clinic) */}
+        {/* Case Study 1: Large Featured Horizontal Card (Nova Studio) */}
         <AnimatedReveal
           className="bg-slate-900/60 border border-slate-800 rounded-3xl p-8 md:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-12 shadow-2xl hover:border-slate-700/60 transition-all duration-300"
           id="featured-case-study"
@@ -100,16 +99,16 @@ export default function CaseStudies() {
           {caseStudyCatalog.slice(0, 3).map((study) => (
             <motion.div key={study.title} variants={scaleIn} className="rounded-3xl border border-slate-800 bg-slate-900/60 p-6 shadow-xl">
               <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-light">
-                Representative clinic growth scenario
+                Representative business growth scenario
               </div>
-              <h4 className="mt-3 text-xl font-bold text-white">{study.clinicType}</h4>
+              <h4 className="mt-3 text-xl font-bold text-white">{study.businessType}</h4>
               <div className="mt-4 text-3xl font-bold text-brand-light">
-                {study.title === "Luxe Skin Clinic" ? "+42%" : study.title === "Aura Dental" ? "+68%" : "+37%"}
+                {study.title === "Nova Studio" ? "+42%" : study.title === "Apex Digital" ? "+68%" : "+37%"}
               </div>
               <div className="mt-1 text-[11px] uppercase tracking-[0.18em] text-slate-400">
-                {study.title === "Luxe Skin Clinic"
-                  ? "Consultation requests"
-                  : study.title === "Aura Dental"
+                {study.title === "Nova Studio"
+                  ? "Conversion requests"
+                  : study.title === "Apex Digital"
                     ? "Local search actions"
                     : "Booked consult flow"}
               </div>
@@ -123,9 +122,9 @@ export default function CaseStudies() {
           ))}
         </motion.div>
 
-        {/* Split Section Below: Card 2 (Aura Dental) & Card 3 (Data-Driven Precision) */}
+        {/* Split Section Below: Card 2 (Apex Digital) & Card 3 (Data-Driven Precision) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8" id="secondary-case-studies">
-          {/* Card 2: Aura Dental */}
+          {/* Card 2: Apex Digital */}
           <AnimatedReveal
             transition={{ duration: 0.8, delay: 0.1, ease: DEFAULT_EASE }}
             className="lg:col-span-7 bg-slate-900/60 border border-slate-800 rounded-3xl p-8 md:p-10 flex flex-col justify-between space-y-8 hover:border-slate-700/60 transition-all duration-300 shadow-xl"
@@ -189,8 +188,8 @@ export default function CaseStudies() {
                 Data-Driven Precision.
               </h4>
               <p className="text-sm text-brand-light/80 leading-relaxed font-sans">
-                We measure whether the system improves visibility, trust, booking flow, and
-                consultation intent. The goal is not fake vanity metrics. It is a clearer clinic
+                We measure whether the system improves visibility, trust, conversion flow, and
+                conversion intent. The goal is not fake vanity metrics. It is a clearer business
                 growth model.
               </p>
             </div>

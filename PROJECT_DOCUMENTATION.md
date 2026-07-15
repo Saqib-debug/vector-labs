@@ -2,21 +2,21 @@
 
 ## 1. Project Overview
 
-`vector-labs` is a premium single-page marketing website for **Vector Labs**, a digital agency positioned as a specialist partner for **dental, aesthetic, and high-end clinic brands**. The site is designed to feel expensive, strategic, modern, and conversion-oriented rather than generic or template-driven.
+`vector-labs` is a premium single-page marketing website for **Vector Labs**, a digital agency positioned as a specialist partner for **dental, aesthetic, and high-end business brands**. The site is designed to feel expensive, strategic, modern, and conversion-oriented rather than generic or template-driven.
 
 At its core, the product is a **high-polish landing page** that sells a service offer:
 
-- premium clinic website design
+- premium business website design
 - patient acquisition systems
 - local SEO and Google profile optimization
 - AI automation
 - booking and operational workflows
-- growth strategy for clinics
+- growth strategy for businesses
 
 The experience is not an app in the product sense. It is a **brand and conversion website** whose job is to:
 
 - establish authority
-- frame the target clinic’s pain points
+- frame the target business’s pain points
 - present a systemized solution
 - show proof through case-study style sections
 - reduce objections
@@ -60,29 +60,29 @@ The copy repeatedly signals:
 - exclusivity
 - prestige
 - high-value patients
-- clinical precision
+- business precision
 - digital systems thinking
 - measurable growth
 
 The language leans heavily into phrases like:
 
 - “digital infrastructure”
-- “prestigious clinics”
+- “prestigious businesses”
 - “high-conversion systems”
 - “Swiss precision”
 - “bespoke”
 - “premium”
 
-This makes the site feel like a **luxury growth consultancy for clinics**, not a general web design shop.
+This makes the site feel like a **luxury growth consultancy for businesses**, not a general web design shop.
 
 ## 4. Audience
 
 The intended audience appears to be:
 
-- aesthetic clinic owners
-- dental clinic owners
+- aesthetic business owners
+- dental business owners
 - premium private practitioners
-- clinic operators and managers
+- business operators and managers
 - medical brands that want stronger patient acquisition and digital positioning
 
 The ideal visitor likely has one or more of these needs:
@@ -194,7 +194,7 @@ What it contains:
 
 The hero visual is a composite scene showing:
 
-- premium desktop clinic site
+- premium desktop business site
 - mobile appointment booking interface
 - reviews popup
 - WhatsApp-style patient conversation card
@@ -265,7 +265,7 @@ Stages:
 7. Social Media
 8. Integrated CTA card
 
-This is one of the strongest sections conceptually because it transforms the offer from “we build websites” into “we architect clinic growth systems.”
+This is one of the strongest sections conceptually because it transforms the offer from “we build websites” into “we architect business growth systems.”
 
 ### Comparison
 
@@ -302,12 +302,12 @@ What it contains:
 
 Named case studies:
 
-- Luxe Skin Clinic
+- Luxe Skin Business
 - Aura Dental
 
 Positioning role:
 
-- reinforces that the agency has worked with premium clinic-style brands
+- reinforces that the agency has worked with premium business-style brands
 - ties visuals to measurable outcomes like ROI, bookings, leads, and speed
 
 ### Process
@@ -339,9 +339,9 @@ Purpose:
 
 Current FAQ topics:
 
-- why the agency focuses only on aesthetic clinics
+- why the agency focuses only on aesthetic businesses
 - how long a transformation takes
-- whether current clinic software can be integrated
+- whether current business software can be integrated
 
 ### CTA
 
@@ -417,9 +417,9 @@ Deep readers can move through the narrative. Scanners can still understand the o
 ### Flow 1: First-time visitor
 
 1. Lands on hero
-2. Understands that Vector Labs serves premium clinics
+2. Understands that Vector Labs serves premium businesses
 3. Sees strong visual cues around websites, booking, reviews, and growth
-4. Scrolls into clinic pain points
+4. Scrolls into business pain points
 5. Understands the proposed growth ecosystem
 6. Reviews competitive differentiation
 7. Checks case studies and process
@@ -704,8 +704,8 @@ This section matters because the project is polished, but not fully productized 
 
 ### Content consistency gaps
 
-- the site is positioned around dental and aesthetic clinics, but parts of the `Challenges` mockups reference orthopedic and joint surgery language
-- copy frequently claims exclusivity around aesthetic clinics, while some examples visually/general-textually drift broader
+- the site is positioned around dental and aesthetic businesses, but parts of the `Challenges` mockups reference orthopedic and joint surgery language
+- copy frequently claims exclusivity around aesthetic businesses, while some examples visually/general-textually drift broader
 
 ### Conversion limitations
 
@@ -728,7 +728,7 @@ This section matters because the project is polished, but not fully productized 
 - replace placeholder legal links
 - replace generic social URLs
 - host the logo locally instead of relying on an external image URL
-- add real clinic inquiry form or scheduler
+- add real business inquiry form or scheduler
 - add analytics and event tracking
 - add CMS or JSON-driven content if non-dev edits are needed
 - add proper SEO/social share image support
@@ -738,7 +738,7 @@ This section matters because the project is polished, but not fully productized 
 
 If this project were described in one sentence from a design standpoint:
 
-It is a **luxury clinic-growth landing page** that blends **medical trust**, **editorial polish**, and **SaaS-style systems visualization**.
+It is a **luxury business-growth landing page** that blends **medical trust**, **editorial polish**, and **SaaS-style systems visualization**.
 
 Its strongest identity traits are:
 
@@ -787,6 +787,6 @@ Its strongest identity traits are:
 
 ## 20. Final Summary
 
-Vector Labs is currently a **high-end, single-page agency website** with a strong premium visual identity and a clear clinic-growth positioning story. It is most successful as a **brand and conversion presentation layer**. The design language, section sequencing, motion, and mockup work all support a polished sales narrative aimed at premium clinic operators.
+Vector Labs is currently a **high-end, single-page agency website** with a strong premium visual identity and a clear business-growth positioning story. It is most successful as a **brand and conversion presentation layer**. The design language, section sequencing, motion, and mockup work all support a polished sales narrative aimed at premium business operators.
 
 Technically, the project is lightweight and easy to reason about because it is component-based, static, and mostly data-driven through local arrays. Strategically, its next step would be turning this polished presentation into a more complete lead-generation system by adding stronger contact capture, tighter content consistency, and cleanup of template leftovers.

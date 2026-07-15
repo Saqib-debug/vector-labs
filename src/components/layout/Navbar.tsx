@@ -12,17 +12,19 @@ import { useRouter } from "@/lib/router";
 import { cn } from "@/lib/utils";
 
 export default function Navbar() {
-  const { pathname } = useRouter();
+  const { navigate, pathname } = useRouter();
   const { shouldReduceMotion } = useAnimationVariants();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -30,6 +32,9 @@ export default function Navbar() {
   useEffect(() => {
     setIsOpen(false);
     setServicesOpen(false);
+    setMobileServicesOpen(false);
+    setScrolled(false);
+    window.scrollTo({ top: 0, behavior: "auto" });
   }, [pathname]);
 
   useEffect(() => {
@@ -47,26 +52,71 @@ export default function Navbar() {
 
   const isHome = pathname === "/";
   const useTransparentState = isHome && !scrolled && !isOpen;
+  const desktopLinkClass = (isActive: boolean) =>
+    cn(
+      "transition-colors",
+      scrolled
+        ? isActive
+          ? "text-white"
+          : "text-white/78 hover:text-white"
+        : isActive
+        ? "text-slate-950"
+        : "text-slate-900/72 hover:text-slate-950",
+    );
 
   const isRouteActive = (href: string, matchPaths?: string[]) => {
     if (href === "/") return pathname === "/";
+    if (href === "/services") return pathname === "/services" || pathname.startsWith("/services/");
     return matchPaths?.includes(pathname) ?? pathname === href;
   };
 
   return (
     <header
       id="main-header"
-      className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
-        useTransparentState
-          ? "bg-transparent py-6"
-          : "border-b border-slate-100/80 bg-white/75 py-4 shadow-sm backdrop-blur-xl"
+      className={`fixed right-0 left-0 z-50 transition-[top,padding] duration-300 ease-out ${
+        isOpen
+          ? "top-0 bg-transparent py-3 md:py-6"
+          : useTransparentState
+          ? "top-0 bg-transparent py-3 md:py-6"
+          : "top-2 py-0 md:top-3"
       }`}
     >
-      <Container className="flex items-center justify-between">
-        <a href="/" className="group flex items-center space-x-3" id="logo-link" aria-label="Vector Labs Homepage">
-          <LogoIcon size={38} className="transition-transform duration-300 group-hover:scale-105" />
-          <span className="flex items-center gap-1.5 text-lg font-bold tracking-tight text-heading uppercase">
-            VECTOR<span className="text-[0.85em] font-medium tracking-widest text-[#0052FF]">LABS</span>
+      <Container
+        className={cn(
+          "flex items-center justify-between transition-[max-width,padding,background-color,border-color,box-shadow,backdrop-filter] duration-300 ease-out",
+          scrolled &&
+            !isOpen &&
+            "max-w-[1240px] rounded-full border border-blue-300/35 bg-brand/90 px-5 py-2 shadow-[0_18px_55px_rgba(0,82,255,0.2)] backdrop-blur-3xl backdrop-saturate-150 md:px-6 md:py-2.5",
+        )}
+      >
+        <a
+          href="/"
+          onClick={(event) => {
+            event.preventDefault();
+            setIsOpen(false);
+            setServicesOpen(false);
+            setMobileServicesOpen(false);
+            navigate("/");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+          className={cn(
+            "group flex items-center space-x-3 transition-opacity duration-300",
+            isOpen && "opacity-0 pointer-events-none md:opacity-100 md:pointer-events-auto",
+          )}
+          id="logo-link"
+          aria-label="Vector Labs Homepage"
+        >
+          <LogoIcon size={34} className="transition-transform duration-300 group-hover:scale-105 md:size-[38px]" />
+          <span
+            className={cn(
+              "flex items-center gap-1.5 text-lg font-bold tracking-tight uppercase transition-colors duration-300",
+              scrolled ? "text-white" : "text-slate-950",
+            )}
+          >
+            VECTOR
+            <span className={cn("text-[0.85em] font-medium tracking-widest", scrolled ? "text-white" : "text-[#0052FF]")}>
+              LABS
+            </span>
           </span>
         </a>
 
@@ -86,7 +136,7 @@ export default function Navbar() {
                     href={item.href}
                     className={cn(
                       "group relative flex items-center py-2 text-sm font-semibold transition-colors",
-                      isActive ? "text-brand" : "text-body hover:text-brand",
+                      desktopLinkClass(isActive),
                     )}
                   >
                     <span>{item.name}</span>
@@ -94,11 +144,11 @@ export default function Navbar() {
                     {isActive ? (
                       <motion.span
                         layoutId="activeNavIndicator"
-                        className="absolute right-0 bottom-0 left-0 h-[2.5px] rounded-full bg-brand"
+                        className={cn("absolute right-0 bottom-0 left-0 h-[2.5px] rounded-full", scrolled ? "bg-white" : "bg-brand")}
                         transition={{ type: "spring", stiffness: 380, damping: 30 }}
                       />
                     ) : (
-                      <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-brand/40 transition-all duration-300 group-hover:w-full" />
+                      <span className={cn("absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-300 group-hover:w-full", scrolled ? "bg-white/50" : "bg-brand/40")} />
                     )}
                   </a>
 
@@ -136,19 +186,17 @@ export default function Navbar() {
               <a
                 key={item.name}
                 href={item.href}
-                className={`group relative py-2 text-sm font-semibold transition-colors ${
-                  isActive ? "text-brand" : "text-body hover:text-brand"
-                }`}
+                className={cn("group relative py-2 text-sm font-semibold transition-colors", desktopLinkClass(isActive))}
               >
                 <span>{item.name}</span>
                 {isActive ? (
                   <motion.span
                     layoutId="activeNavIndicator"
-                    className="absolute right-0 bottom-0 left-0 h-[2.5px] rounded-full bg-brand"
+                    className={cn("absolute right-0 bottom-0 left-0 h-[2.5px] rounded-full", scrolled ? "bg-white" : "bg-brand")}
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 ) : (
-                  <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-brand/40 transition-all duration-300 group-hover:w-full" />
+                  <span className={cn("absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-300 group-hover:w-full", scrolled ? "bg-white/50" : "bg-brand/40")} />
                 )}
               </a>
             );
@@ -156,13 +204,21 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden md:flex">
-          <Button href="/contact" size="sm" id="btn-book-consultation-desktop">
+          <Button
+            href="/contact"
+            size="sm"
+            id="btn-book-conversion-desktop"
+            className={cn(scrolled && "!bg-white !text-brand shadow-[0_14px_30px_-16px_rgba(255,255,255,0.7)] hover:!bg-slate-950 hover:!text-white")}
+          >
             Book Strategy Call
           </Button>
         </div>
 
         <button
-          className="p-2 text-heading transition-colors hover:text-brand md:hidden"
+          className={cn(
+            "relative z-50 rounded-full p-2 text-white transition-all duration-300 hover:bg-white/10 hover:text-white md:hidden",
+            !useTransparentState && "text-white",
+          )}
           onClick={() => setIsOpen((open) => !open)}
           aria-label="Toggle navigation menu"
           aria-expanded={isOpen}
@@ -178,66 +234,104 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: shouldReduceMotion ? 0.18 : 0.25, ease: DEFAULT_EASE }}
-            className="fixed inset-0 top-0 z-40 bg-[#F8FAFC]/96 backdrop-blur-xl md:hidden"
+            transition={{ duration: shouldReduceMotion ? 0.12 : 0.18, ease: DEFAULT_EASE }}
+            className="fixed inset-0 top-0 z-40 overflow-y-auto bg-slate-950/94 backdrop-blur-[52px] md:hidden"
             id="mobile-drawer"
           >
             <motion.div
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 18 }}
+              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 10 }}
               animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
-              exit={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 18 }}
-              transition={{ duration: shouldReduceMotion ? 0.16 : 0.28, ease: DEFAULT_EASE }}
+              exit={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 8 }}
+              transition={{ duration: shouldReduceMotion ? 0.12 : 0.2, ease: DEFAULT_EASE }}
             >
-              <Container className="flex min-h-screen flex-col pt-28 pb-10">
-                <div className="flex flex-1 flex-col justify-between">
-                  <div className="space-y-3">
-                    {mainNavigation.map((item) => {
-                      const isActive = isRouteActive(item.href, item.matchPaths);
-                      return (
-                        <div key={item.name} className="rounded-3xl border border-slate-100 bg-white/70 p-5 shadow-sm">
-                          <a
-                            href={item.href}
-                            onClick={() => setIsOpen(false)}
-                            className={`flex items-center justify-between text-xl font-semibold transition-colors ${
-                              isActive ? "text-brand" : "text-heading hover:text-brand"
-                            }`}
-                          >
-                            <span>{item.name}</span>
-                            {isActive ? <span className="h-2 w-2 rounded-full bg-brand" /> : null}
-                          </a>
+              <Container className="flex min-h-dvh flex-col pt-24 pb-8">
+                <div className="relative flex flex-1 flex-col justify-between rounded-[2rem] border border-white/10 bg-slate-950/74 p-5 shadow-[0_24px_90px_rgba(0,0,0,0.58)] backdrop-blur-[56px]">
+                  <div>
+                    <div className="mb-4 flex items-center justify-between border-b border-white/10 pb-4">
+                      <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/55">
+                        Navigation
+                      </span>
+                      <span className="h-2 w-2 rounded-full bg-brand shadow-[0_0_18px_rgba(0,82,255,0.8)]" />
+                    </div>
 
-                          {item.children?.length ? (
-                            <div className="mt-4 grid gap-2 border-t border-slate-100 pt-4">
-                              {item.children.map((child) => (
-                                <a
-                                  key={child.name}
-                                  href={child.href}
-                                  onClick={() => setIsOpen(false)}
-                                  className="rounded-2xl bg-slate-50 px-4 py-3 text-sm font-medium text-body transition-colors hover:text-brand"
+                    <div className="space-y-2">
+                      {mainNavigation.map((item) => {
+                        const isActive = isRouteActive(item.href, item.matchPaths);
+                        const hasChildren = Boolean(item.children?.length);
+                        return (
+                          <div key={item.name} className="rounded-2xl border border-white/12 bg-white/[0.045] p-3">
+                            {hasChildren ? (
+                              <button
+                                type="button"
+                                onClick={() => setMobileServicesOpen((open) => !open)}
+                                className={`flex w-full items-center justify-between text-sm font-semibold transition-colors ${
+                                  isActive ? "text-white" : "text-white/86 hover:text-white"
+                                }`}
+                                aria-expanded={mobileServicesOpen}
+                              >
+                                <span>{item.name}</span>
+                                <ChevronDown
+                                  className={`h-4 w-4 text-white/45 transition-transform ${
+                                    mobileServicesOpen ? "rotate-180 text-brand" : ""
+                                  }`}
+                                />
+                              </button>
+                            ) : (
+                              <a
+                                href={item.href}
+                                onClick={() => setIsOpen(false)}
+                                className={`flex items-center justify-between text-sm font-semibold transition-colors ${
+                                  isActive ? "text-white" : "text-white/86 hover:text-white"
+                                }`}
+                              >
+                                <span>{item.name}</span>
+                                <ArrowRight className={`h-3.5 w-3.5 transition-transform ${isActive ? "text-brand" : "text-white/35"}`} />
+                              </a>
+                            )}
+
+                            <AnimatePresence initial={false}>
+                              {hasChildren && mobileServicesOpen ? (
+                                <motion.div
+                                  initial={{ height: 0, opacity: 0 }}
+                                  animate={{ height: "auto", opacity: 1 }}
+                                  exit={{ height: 0, opacity: 0 }}
+                                  transition={{ duration: 0.24, ease: DEFAULT_EASE }}
+                                  className="overflow-hidden"
                                 >
-                                  {child.name}
-                                </a>
-                              ))}
-                            </div>
-                          ) : null}
-                        </div>
-                      );
-                    })}
+                                  <div className="mt-3 grid gap-1.5 border-t border-white/10 pt-3">
+                                    {item.children.map((child) => (
+                                      <a
+                                        key={child.name}
+                                        href={child.href}
+                                        onClick={() => setIsOpen(false)}
+                                        className="rounded-xl border border-white/10 bg-slate-900/72 px-3 py-2 text-xs font-medium text-white/78 transition-colors hover:border-brand/35 hover:bg-brand/15 hover:text-white"
+                                      >
+                                        {child.name}
+                                      </a>
+                                    ))}
+                                  </div>
+                                </motion.div>
+                              ) : null}
+                            </AnimatePresence>
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
 
-                  <div className="space-y-4 pt-10">
+                  <div className="space-y-4 pt-8">
                     <Button
                       href="/contact"
                       size="md"
                       icon={<ArrowRight className="h-4 w-4" />}
-                      id="btn-book-consultation-mobile"
+                      id="btn-book-conversion-mobile"
                       onClick={() => setIsOpen(false)}
                       className="w-full"
                     >
                       Book Strategy Call
                     </Button>
-                    <p className="text-center text-xs uppercase tracking-[0.18em] text-slate-400">
-                      Multi-page clinic growth site
+                    <p className="text-center text-xs uppercase tracking-[0.18em] text-white/40">
+                      Multi-page business growth site
                     </p>
                   </div>
                 </div>

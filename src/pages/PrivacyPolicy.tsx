@@ -8,11 +8,11 @@ import SectionHeader from "@/components/ui/SectionHeader";
 const privacySections = [
   {
     title: "Information We Collect",
-    text: "Vector Labs may collect contact details, clinic information, and project inquiry details submitted through the website so strategy calls and service discussions can be handled properly.",
+    text: "Vector Labs may collect contact details, business information, and project inquiry details submitted through the website so strategy calls and service discussions can be handled properly.",
   },
   {
     title: "How Information Is Used",
-    text: "Submitted information is used to review fit, respond to inquiries, understand clinic goals, and improve the lead qualification process. The current contact form prototype stores submissions locally until the production backend is implemented.",
+    text: "Submitted information is used to review fit, respond to inquiries, understand business goals, and improve the lead qualification process. The current contact form prototype stores submissions locally until the production backend is implemented.",
   },
   {
     title: "Future Infrastructure",
@@ -25,11 +25,11 @@ export default function PrivacyPolicyPage() {
     <>
       <PageHero
         eyebrow="Privacy Policy"
-        title="How Vector Labs handles inquiry and clinic information."
+        title="How Vector Labs handles inquiry and business information."
         description="This is a lightweight policy page for the current website phase. It gives the footer real legal destinations while the live backend and CRM systems are still being implemented."
       />
 
-      <Section className="bg-white">
+      <Section>
         <Container>
           <SectionHeader
             eyebrow="Policy Overview"

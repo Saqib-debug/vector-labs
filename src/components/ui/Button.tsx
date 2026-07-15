@@ -21,13 +21,35 @@ interface SharedButtonProps {
   iconClassName?: string;
 }
 
+type MotionSafeAnchorAttributes = Omit<
+  AnchorHTMLAttributes<HTMLAnchorElement>,
+  | "onAnimationStart"
+  | "onAnimationComplete"
+  | "onAnimationEnd"
+  | "onAnimationIteration"
+  | "onDrag"
+  | "onDragStart"
+  | "onDragEnd"
+>;
+
+type MotionSafeButtonAttributes = Omit<
+  ButtonHTMLAttributes<HTMLButtonElement>,
+  | "onAnimationStart"
+  | "onAnimationComplete"
+  | "onAnimationEnd"
+  | "onAnimationIteration"
+  | "onDrag"
+  | "onDragStart"
+  | "onDragEnd"
+>;
+
 type LinkButtonProps = SharedButtonProps &
-  AnchorHTMLAttributes<HTMLAnchorElement> & {
+  MotionSafeAnchorAttributes & {
     href: string;
   };
 
 type ActionButtonProps = SharedButtonProps &
-  ButtonHTMLAttributes<HTMLButtonElement> & {
+  MotionSafeButtonAttributes & {
     href?: undefined;
   };
 
@@ -35,9 +57,9 @@ type ButtonProps = LinkButtonProps | ActionButtonProps;
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    "bg-teal-700 text-white shadow-[0_14px_30px_-12px_rgba(15,118,110,0.45)] hover:bg-teal-800 hover:shadow-[0_22px_36px_-14px_rgba(15,118,110,0.5)]",
+    "bg-brand text-white shadow-[0_14px_30px_-12px_rgba(0,82,255,0.45)] hover:bg-brand-hover hover:shadow-[0_22px_36px_-14px_rgba(0,82,255,0.5)]",
   secondary:
-    "border border-slate-300 bg-white/80 text-slate-900 shadow-[0_8px_24px_-18px_rgba(15,23,42,0.3)] hover:border-teal-700 hover:text-teal-800 hover:shadow-[0_16px_32px_-18px_rgba(15,118,110,0.28)]",
+    "border border-slate-300 bg-white/80 text-slate-900 shadow-[0_8px_24px_-18px_rgba(15,23,42,0.3)] hover:border-brand hover:text-brand-hover hover:shadow-[0_16px_32px_-18px_rgba(0,82,255,0.28)]",
   ghost: "border border-white/25 text-white hover:bg-white/10",
   inverse: "bg-slate-950 text-white shadow-[0_16px_32px_-18px_rgba(15,23,42,0.55)] hover:bg-slate-800",
 };
@@ -94,7 +116,7 @@ export default function Button(props: ButtonProps) {
   };
 
   if ("href" in props && props.href) {
-    const { href, onMouseMove, onMouseLeave, ...anchorProps } = rest as AnchorHTMLAttributes<HTMLAnchorElement>;
+    const { href, onMouseMove, onMouseLeave, ...anchorProps } = rest as MotionSafeAnchorAttributes;
     return (
       <motion.a
         href={href}
@@ -121,7 +143,7 @@ export default function Button(props: ButtonProps) {
     );
   }
 
-  const { onMouseMove, onMouseLeave, ...buttonProps } = rest as ButtonHTMLAttributes<HTMLButtonElement>;
+  const { onMouseMove, onMouseLeave, ...buttonProps } = rest as MotionSafeButtonAttributes;
   return (
     <motion.button
       type={buttonProps.type ?? "button"}

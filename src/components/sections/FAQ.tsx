@@ -14,12 +14,12 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <Section id="faq" className="border-t border-border-light bg-bg-base">
+    <Section id="faq" className="border-t border-border-light">
       <Container width="narrow" className="max-w-3xl">
         <SectionHeader
           eyebrow="FAQ"
-          title="Questions Clinics Usually Ask Before Starting"
-          description="A stronger homepage should answer the most common questions around specialization, SEO, booking systems, automation, ads, and project scope."
+          title="Questions Businesses Usually Ask Before Starting"
+          description="A stronger homepage should answer the most common questions around specialization, SEO, conversion systems, automation, ads, and project scope."
           align="center"
           className="mb-16"
         />

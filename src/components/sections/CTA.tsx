@@ -7,8 +7,8 @@ export default function CTA() {
   return (
     <CTASection
       id="cta"
-      title="Ready to Transform Your Clinic?"
-      description="Join ambitious dental and aesthetic clinics. Book your strategy call to receive a custom growth audit and a sharper digital roadmap."
+      title="Ready to Transform Your Business?"
+      description="Join ambitious service and online businesses. Book your strategy call to receive a custom growth audit and a sharper digital roadmap."
     >
       <div className="flex flex-col items-center justify-center gap-4 sm:flex-row" id="cta-buttons">
         <Button

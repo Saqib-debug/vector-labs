@@ -24,7 +24,7 @@ export default function Card({
   return (
     <div
       className={cn(
-        "rounded-3xl border shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-xl",
+        "rounded-3xl border [--section-accent:var(--color-brand)] [--section-body:var(--color-body)] [--section-heading:var(--color-heading)] shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-xl",
         toneClasses[tone],
         className,
       )}

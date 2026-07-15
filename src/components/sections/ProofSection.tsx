@@ -8,7 +8,7 @@ import { proofMetrics, testimonials } from "@/data/proof";
 
 export default function ProofSection() {
   return (
-    <Section className="bg-white">
+    <Section>
       <Container>
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">

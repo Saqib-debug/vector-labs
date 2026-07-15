@@ -29,34 +29,34 @@ export default function SectionHeader({
       )}
     >
       <div className={cn("mb-3 flex items-center space-x-3", centered && "justify-center")}>
-        <span className={cn("h-[1.5px] w-10", inverted ? "bg-brand-light" : "bg-brand/35")} />
+        <span className={cn("h-[1.5px] w-10", inverted ? "bg-brand-light" : "bg-[var(--section-accent)] opacity-35")} />
         <Badge
           tone={inverted ? "dark" : "brand-soft"}
           className={cn(
             "border-0 bg-transparent px-0 py-0 text-xs",
-            inverted ? "text-brand-light" : "text-brand",
+            inverted ? "text-brand-light" : "text-[var(--section-accent)]",
           )}
         >
           {eyebrow}
         </Badge>
-        {centered && <span className={cn("h-[1.5px] w-10", inverted ? "bg-brand-light" : "bg-brand/35")} />}
+        {centered && <span className={cn("h-[1.5px] w-10", inverted ? "bg-brand-light" : "bg-[var(--section-accent)] opacity-35")} />}
       </div>
 
       <h2
         className={cn(
           "text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl",
-          inverted ? "text-white" : "text-heading",
+          inverted ? "text-white" : "text-[var(--section-heading)]",
         )}
       >
         {title}
-        <span className={inverted ? "text-brand-light" : "text-brand"}>.</span>
+        <span className={inverted ? "text-brand-light" : "text-[var(--section-accent)]"}>.</span>
       </h2>
 
       {description ? (
         <p
           className={cn(
             "mt-4 max-w-3xl text-base leading-relaxed sm:text-lg",
-            inverted ? "text-slate-300" : "text-body",
+            inverted ? "text-slate-300" : "text-[var(--section-body)]",
           )}
         >
           {description}

@@ -10,13 +10,14 @@ import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { featuredCaseStudy } from "@/data/caseStudies";
 
-export default function AestheticClinicsPage() {
+export default function OnlineBusinessesPage() {
   return (
     <>
       <PageHero
-        eyebrow="Aesthetic Clinics"
-        title="Luxury digital positioning for aesthetic clinics that sell trust before consultation."
-        description="This page speaks to aesthetic clinic owners who need a more premium digital identity, stronger consultation funnels, and better coordination between visuals, reviews, social proof, and booking."
+        eyebrow="Online Brands"
+        title="Luxury digital positioning for online businesses that sell trust before conversion."
+        description="This page speaks to online business owners who need a more premium digital identity, stronger conversion funnels, and better coordination between visuals, reviews, social proof, and conversion."
+        titleClassName="max-w-4xl text-4xl font-bold tracking-tight text-black sm:text-5xl lg:text-6xl"
       >
         <div className="pt-4">
           <Button href="/contact" icon={<ArrowUpRight className="h-4 w-4" />}>
@@ -25,19 +26,19 @@ export default function AestheticClinicsPage() {
         </div>
       </PageHero>
 
-      <Section className="bg-white">
+      <Section>
         <Container>
           <SectionHeader
             eyebrow="Trust Problem"
-            title="High-ticket aesthetic patients judge the experience before they inquire"
-            description="Premium aesthetic demand depends on trust, subtlety, visual authority, and a frictionless path to consultation."
+            title="High-ticket online clients judge the experience before they inquire"
+            description="Premium online demand depends on trust, subtlety, visual authority, and a frictionless path to conversion."
             className="mb-16"
           />
           <div className="grid gap-6 md:grid-cols-3">
             {[
               "Luxury brands lose trust when websites feel generic or low-effort.",
-              "Patients compare Instagram, reviews, Google, and booking experience as one brand signal.",
-              "High-ticket consultations drop when social proof and treatment clarity are not structured well.",
+              "Clients compare Instagram, reviews, Google, and conversion experience as one brand signal.",
+              "High-ticket conversions drop when social proof and service clarity are not structured well.",
             ].map((item) => (
               <Card key={item} className="p-6">
                 <Sparkles className="h-5 w-5 text-brand" />
@@ -48,20 +49,20 @@ export default function AestheticClinicsPage() {
         </Container>
       </Section>
 
-      <Section className="bg-bg-base">
+      <Section>
         <Container>
           <div className="grid gap-6 lg:grid-cols-2">
             <Card className="p-8">
               <SectionHeader
                 eyebrow="Identity + Website"
                 title="Luxury visual identity and digital positioning"
-                description="Aesthetic clinics need visuals that feel editorial, precise, and premium while still moving patients toward consultation."
+                description="Online businesses need visuals that feel editorial, precise, and premium while still moving clients toward conversion."
               />
               <div className="mt-6 space-y-3">
                 {[
-                  "Treatment pages framed around outcomes and subtle trust",
+                  "Service pages framed around outcomes and subtle trust",
                   "Premium typography, photography direction, and motion",
-                  "Consultation pages that feel expensive without feeling cold",
+                  "Conversion pages that feel expensive without feeling cold",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3 text-sm leading-relaxed text-body">
                     <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand" />
@@ -73,15 +74,15 @@ export default function AestheticClinicsPage() {
 
             <Card tone="highlight" className="p-8">
               <SectionHeader
-                eyebrow="Treatment Landing Pages"
-                title="Treatment pages that support premium consultation decisions"
-                description="Vector Labs builds treatment-specific landing pages for fillers, skin rejuvenation, body contouring, facial balancing, and signature offers."
+                eyebrow="Service Landing Pages"
+                title="Service pages that support premium conversion decisions"
+                description="Vector Labs builds service-specific landing pages, service pages, product launches, lead magnets, and signature offers."
               />
               <div className="mt-6 space-y-3">
                 {[
                   "Offer-specific landing page architecture",
                   "Review and before/after proof structure",
-                  "Lead qualification before the booking step",
+                  "Lead qualification before the conversion step",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3 text-sm leading-relaxed text-body">
                     <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand" />
@@ -94,20 +95,20 @@ export default function AestheticClinicsPage() {
         </Container>
       </Section>
 
-      <Section className="bg-white">
+      <Section>
         <Container>
           <SectionHeader
             eyebrow="Flow Design"
-            title="Reviews, Instagram, WhatsApp, and booking need to feel connected"
-            description="Aesthetic clinic growth depends on how well social proof and messaging channels feed into the high-ticket consultation funnel."
+            title="Reviews, Instagram, WhatsApp, and conversion need to feel connected"
+            description="Online business growth depends on how well social proof and messaging channels feed into the high-ticket conversion funnel."
             className="mb-16"
           />
           <div className="grid gap-6 md:grid-cols-4">
             {[
-              { icon: Instagram, title: "Instagram", text: "Lifestyle, results, and treatment authority establish desire and trust." },
-              { icon: MessageCircleMore, title: "WhatsApp", text: "Fast responses and guided answers reduce drop-off during pre-consultation questions." },
-              { icon: Sparkles, title: "Reviews", text: "Review visibility and quality help patients justify higher-ticket spend." },
-              { icon: CheckCircle2, title: "Booking", text: "Qualification and consultation request flow convert trust into action." },
+              { icon: Instagram, title: "Instagram", text: "Lifestyle, results, and service authority establish desire and trust." },
+              { icon: MessageCircleMore, title: "WhatsApp", text: "Fast responses and guided answers reduce drop-off during pre-conversion questions." },
+              { icon: Sparkles, title: "Reviews", text: "Review visibility and quality help clients justify higher-ticket spend." },
+              { icon: CheckCircle2, title: "Conversion", text: "Qualification and conversion request flow convert trust into action." },
             ].map((item) => {
               const Icon = item.icon;
               return (
@@ -124,21 +125,21 @@ export default function AestheticClinicsPage() {
         </Container>
       </Section>
 
-      <Section className="bg-bg-base">
+      <Section>
         <Container>
           <div className="grid gap-6 lg:grid-cols-12">
             <Card className="p-8 lg:col-span-5">
               <SectionHeader
                 eyebrow="High-Ticket Funnel"
-                title="A cleaner path into consultation"
-                description="The funnel for aesthetic clinics has to qualify demand without killing momentum."
+                title="A cleaner path into conversion"
+                description="The funnel for online businesses has to qualify demand without killing momentum."
               />
               <div className="mt-6 space-y-3">
                 {[
-                  "Ad / social / search traffic lands on treatment page",
+                  "Ad / social / search traffic lands on service page",
                   "Trust and transformation proof remove hesitation",
-                  "Qualification form sets the consultation up properly",
-                  "Booking or call request moves into clinic follow-up",
+                  "Qualification form sets the conversion up properly",
+                  "Conversion or call request moves into business follow-up",
                 ].map((item, index) => (
                   <div key={item} className="flex items-center gap-3 rounded-2xl border border-slate-100 bg-white px-4 py-3 text-sm text-heading">
                     <span className="flex h-7 w-7 items-center justify-center rounded-full bg-brand text-xs font-bold text-white">
@@ -169,10 +170,10 @@ export default function AestheticClinicsPage() {
                   Explore Services
                 </Button>
                 <Button
-                  href="/contact?clinicType=Aesthetic%20Clinic&mainGoal=More%20patient%20bookings&source=aesthetic-page"
+                  href="/contact?businessType=Online%20Business&mainGoal=More%20client%20conversions&source=online-page"
                   size="sm"
                 >
-                  Discuss your clinic
+                  Discuss your business
                 </Button>
               </div>
             </Card>
@@ -181,11 +182,11 @@ export default function AestheticClinicsPage() {
       </Section>
 
       <PageNextStep
-        title="Turn premium positioning into a cleaner consultation flow"
-        description="Aesthetic clinic owners usually want to see the service stack next, then move into a strategy request with brand and booking context already carried over."
+        title="Turn premium positioning into a cleaner conversion flow"
+        description="Online business owners usually want to see the service stack next, then move into a strategy request with brand and conversion context already carried over."
         primaryHref="/services"
         primaryLabel="Explore Services"
-        secondaryHref="/contact?clinicType=Aesthetic%20Clinic&mainGoal=More%20patient%20bookings&source=aesthetic-next-step"
+        secondaryHref="/contact?businessType=Online%20Business&mainGoal=More%20client%20conversions&source=online-next-step"
         secondaryLabel="Book Strategy Call"
       />
 

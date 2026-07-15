@@ -74,7 +74,7 @@ export interface CaseStudy {
 }
 
 export interface CaseStudyDetail {
-  clinicType: string;
+  businessType: string;
   title: string;
   problem: string;
   solution: string;

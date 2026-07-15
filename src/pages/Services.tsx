@@ -12,21 +12,21 @@ import { serviceDetails, servicePackages } from "@/data/services";
 
 const serviceIntroductions: Record<string, string> = {
   "website-design":
-    "Your website is the main trust and conversion layer for the clinic. It should feel premium, explain treatments clearly, and move patients toward the right consultation step without friction.",
+    "Your website is the main trust and conversion layer for the business. It should feel premium, explain services clearly, and move clients toward the right conversion step without friction.",
   "local-seo":
-    "Local SEO is how premium clinics show up where treatment demand already exists. It connects service pages, city intent, on-page structure, and technical visibility into one system.",
+    "Local SEO is how premium businesses show up where service demand already exists. It connects service pages, city intent, on-page structure, and technical visibility into one system.",
   "google-profile-optimization":
-    "The Google Business Profile often shapes first impressions before a patient even clicks through to the website. It needs to support trust, visibility, and action.",
+    "The Google Business Profile often shapes first impressions before a client even clicks through to the website. It needs to support trust, visibility, and action.",
   "paid-ads":
-    "Paid acquisition only works well when the ad promise, landing page, and lead flow all align. The goal is not more leads at any cost, but better consultation intent.",
+    "Paid acquisition only works well when the ad promise, landing page, and lead flow all align. The goal is not more leads at any cost, but better conversion intent.",
   "ai-automation":
-    "Automation helps clinics respond faster, recover missed opportunities, and reduce repetitive manual work without making the patient experience feel robotic.",
-  "booking-systems":
-    "A booking system is not only a calendar. It is the path between patient interest and confirmed consultation, including routing, reminders, and follow-up clarity.",
+    "Automation helps businesses respond faster, recover missed opportunities, and reduce repetitive manual work without making the client experience feel robotic.",
+  "conversion-systems":
+    "A conversion system is not only a calendar. It is the path between client interest and confirmed conversion, including routing, reminders, and follow-up clarity.",
   "social-media-systems":
-    "Social media should support your premium positioning and move people into the website and consultation journey with stronger trust and clearer treatment framing.",
+    "Social media should support your premium positioning and move people into the website and conversion journey with stronger trust and clearer service framing.",
   "analytics-reporting":
-    "Analytics turns digital activity into something the clinic can actually understand. It shows what is driving consultations, where drop-off exists, and what to improve next.",
+    "Analytics turns digital activity into something the business can actually understand. It shows what is driving conversions, where drop-off exists, and what to improve next.",
 };
 
 export default function ServicesPage() {
@@ -34,8 +34,12 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Services"
-        title="Clinic Growth Services Built Around Visibility, Trust, And Bookings"
-        description="This page is designed to make the full offer easy to understand. Each service block explains what Vector Labs handles and how it fits into a premium clinic growth system."
+        title="Business Growth Services Built Around Visibility, Trust, And Conversions"
+        description="This page is designed to make the full offer easy to understand. Each service block explains what Vector Labs handles and how it fits into a premium business growth system."
+        className="bg-[#3a3a3a] pt-28 md:pt-32 lg:pt-36"
+        eyebrowClassName="text-xs font-semibold uppercase tracking-[0.2em] text-brand"
+        titleClassName="max-w-4xl text-4xl font-bold tracking-tight text-black sm:text-5xl lg:text-6xl"
+        descriptionClassName="max-w-3xl text-base leading-relaxed text-slate-900 sm:text-lg"
       >
         <div className="flex flex-col gap-4 pt-4 sm:flex-row">
           <Button href="/contact" icon={<ArrowUpRight className="h-4 w-4" />}>
@@ -47,12 +51,12 @@ export default function ServicesPage() {
         </div>
       </PageHero>
 
-      <Section className="bg-white">
+      <Section className="bg-[#3a3a3a]">
         <Container>
           <SectionHeader
             eyebrow="Service Grid"
             title="The full offer at a glance"
-            description="Every service is part of the same clinic growth system, but each can also solve a specific bottleneck around visibility, trust, follow-up, or booking."
+            description="Every service is part of the same business growth system, but each can also solve a specific bottleneck around visibility, trust, follow-up, or conversion."
             className="mb-16"
           />
 
@@ -63,7 +67,7 @@ export default function ServicesPage() {
                 <Card
                   key={service.id}
                   id={service.id}
-                  className="group flex h-full flex-col p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand/15 hover:shadow-[0_18px_34px_-16px_rgba(15,118,110,0.18)]"
+                  className="group flex h-full flex-col p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand/15 hover:shadow-[0_18px_34px_-16px_rgba(0,82,255,0.18)]"
                 >
                   <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl bg-brand/10 text-brand transition-transform duration-300 group-hover:scale-105">
                     <Icon className="h-5 w-5" />
@@ -71,10 +75,10 @@ export default function ServicesPage() {
                   <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">
                     Service {String(index + 1).padStart(2, "0")}
                   </div>
-                  <h3 className="mt-2 text-lg font-bold text-heading">{service.title}</h3>
+                  <h3 className="mt-2 text-lg font-bold text-black">{service.title}</h3>
                   <p className="mt-3 min-h-[3.75rem] text-sm leading-relaxed text-body">{service.summary}</p>
-                  <a href={`#${service.id}`} className="mt-6 inline-flex items-center text-sm font-semibold text-brand">
-                    Jump to section
+                  <a href={`/services/${service.id}`} className="mt-6 inline-flex items-center text-sm font-semibold text-brand">
+                    View service page
                     <ArrowUpRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </a>
                 </Card>
@@ -84,7 +88,7 @@ export default function ServicesPage() {
         </Container>
       </Section>
 
-      <Section className="bg-bg-base">
+      <Section className="bg-[#3a3a3a]">
         <Container>
           <SectionHeader
             eyebrow="Detailed Service Blocks"
@@ -107,7 +111,7 @@ export default function ServicesPage() {
                     <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-brand">
                       Service {String(index + 1).padStart(2, "0")}
                     </div>
-                    <h3 className="mt-3 text-2xl font-bold text-heading">{service.title}</h3>
+                    <h3 className="mt-3 text-2xl font-bold text-black">{service.title}</h3>
                     <p className="mt-4 text-sm leading-relaxed text-body">{service.description}</p>
                     <p className="mt-4 text-sm leading-relaxed text-slate-500">{intro}</p>
                     <div className="mt-6">
@@ -141,7 +145,7 @@ export default function ServicesPage() {
                       {service.outcomes.map((outcome) => (
                         <div
                           key={outcome}
-                          className="rounded-2xl border border-brand/10 bg-brand/[0.03] px-4 py-3 text-sm font-medium text-heading"
+                          className="rounded-2xl border border-brand/10 bg-brand/[0.03] px-4 py-3 text-sm font-medium text-black"
                         >
                           {outcome}
                         </div>
@@ -155,19 +159,19 @@ export default function ServicesPage() {
         </Container>
       </Section>
 
-      <Section className="bg-white">
+      <Section className="bg-[#3a3a3a]">
         <Container>
           <SectionHeader
             eyebrow="Packages"
-            title="Service bundles for different clinic growth stages"
-            description="Some clinics need one fix. Others need a connected system. The package layer helps visitors understand how the services can combine."
+            title="Service bundles for different business growth stages"
+            description="Some businesses need one fix. Others need a connected system. The package layer helps visitors understand how the services can combine."
             className="mb-16"
           />
           <div className="grid gap-6 lg:grid-cols-3">
             {servicePackages.map((pkg, index) => (
               <Card key={pkg.name} tone={index === 1 ? "highlight" : "surface"} className="p-8">
                 <div className="text-xs font-semibold uppercase tracking-[0.18em] text-brand">{pkg.name}</div>
-                <h3 className="mt-4 text-2xl font-bold text-heading">{pkg.description}</h3>
+                <h3 className="mt-4 text-2xl font-bold text-black">{pkg.description}</h3>
                 <p className="mt-4 text-sm leading-relaxed text-body">{pkg.idealFor}</p>
                 <div className="mt-6 space-y-3">
                   {pkg.includes.map((item) => (

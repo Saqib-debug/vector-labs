@@ -12,12 +12,12 @@ export default function Process() {
   const { fadeUp, staggerContainer, revealViewport } = useAnimationVariants();
 
   return (
-    <Section id="process" className="bg-white">
+    <Section id="process">
       <Container>
         <SectionHeader
           eyebrow="Process"
           title="Diagnose → Strategy → Design → Build → Launch → Optimize"
-          description="Each stage explains what happens, what the clinic receives, and why the step matters to growth."
+          description="Each stage explains what happens, what the business receives, and why the step matters to growth."
           align="center"
           className="mb-16 md:mb-20"
         />
@@ -65,7 +65,7 @@ export default function Process() {
 
         <div className="mt-14 flex justify-center">
           <Button href="/contact" variant="secondary" icon={<ArrowUpRight className="h-4 w-4" />}>
-            See how your clinic would fit into this process
+            See how your business would fit into this process
           </Button>
         </div>
       </Container>

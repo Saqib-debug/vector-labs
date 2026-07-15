@@ -14,24 +14,25 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About"
-        title="Why Vector Labs exists and why clinic growth needs specialized systems."
+        title="Why Vector Labs exists and why business growth needs specialized systems."
         description="This page gives the brand more credibility by explaining the agency philosophy, design thinking, technology principles, and process behind the work."
+        titleClassName="max-w-4xl text-4xl font-bold tracking-tight text-black sm:text-5xl lg:text-6xl"
       />
 
-      <Section id="process-overview" className="bg-white">
+      <Section id="process-overview">
         <Container>
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-5">
               <SectionHeader
                 eyebrow="Why Vector Labs Exists"
-                title="To replace generic agency output with clinic-specific systems"
-                description="Dental and aesthetic clinics do not need random marketing activity. They need a structured digital operating layer that makes premium care easier to trust and easier to book."
+                title="To replace generic agency output with business-specific systems"
+                description="Service and online businesses do not need random marketing activity. They need a structured digital operating layer that makes premium value easier to trust and easier to book."
               />
             </div>
             <div className="grid gap-6 lg:col-span-7 md:grid-cols-2">
               {[
-                "Clinics need specialized digital systems because trust, treatment value, and booking friction are different from general local businesses.",
-                "Vector Labs focuses on the patient acquisition stack: positioning, search, booking, follow-up, and reporting.",
+                "Businesses need specialized digital systems because trust, service value, and conversion friction are different from general local businesses.",
+                "Vector Labs focuses on the client acquisition stack: positioning, search, conversion, follow-up, and reporting.",
                 "The design philosophy is premium, editorial, and calm rather than loud or generic.",
                 "The technology philosophy is fast, structured, and measurable rather than plugin-heavy and fragile.",
               ].map((item) => (
@@ -45,7 +46,7 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      <Section className="bg-bg-base">
+      <Section>
         <Container>
           <div className="grid gap-6 lg:grid-cols-2">
             <Card className="p-8">
@@ -59,14 +60,14 @@ export default function AboutPage() {
               <SectionHeader
                 eyebrow="Technology Principles"
                 title="The underlying system should be fast, connected, and easy to reason about"
-                description="The best clinic websites feel premium because they are both well designed and technically coherent: structured pages, better flows, and cleaner data visibility."
+                description="The best business websites feel premium because they are both well designed and technically coherent: structured pages, better flows, and cleaner data visibility."
               />
             </Card>
           </div>
         </Container>
       </Section>
 
-      <Section className="bg-white">
+      <Section>
         <Container>
           <SectionHeader
             eyebrow="Process Overview"
@@ -87,7 +88,7 @@ export default function AboutPage() {
       </Section>
 
       <PageNextStep
-        title="If the philosophy fits, the next step is seeing how it applies to your clinic"
+        title="If the philosophy fits, the next step is seeing how it applies to your business"
         description="Vector Labs is most useful when the strategy, process, and specialization feel aligned. From here, move into a strategy call or review service scope."
         primaryHref="/contact?mainGoal=Full%20growth%20system&source=about-page"
         primaryLabel="Book Strategy Call"

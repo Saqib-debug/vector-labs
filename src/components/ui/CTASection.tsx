@@ -23,7 +23,7 @@ export default function CTASection({
   const { fadeUp, shouldReduceMotion, revealViewport } = useAnimationVariants();
 
   return (
-    <Section id={id} className="bg-bg-base">
+    <Section id={id} >
       <Container>
         <motion.div
           variants={fadeUp}

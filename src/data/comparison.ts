@@ -4,22 +4,22 @@ export const comparisonRows: ComparisonRow[] = [
   {
     feature: "Industry Understanding",
     typicalAgency: "Broad generalist positioning",
-    vectorLabs: "Built around dental and aesthetic clinic growth",
+    vectorLabs: "Built around service and online business growth",
   },
   {
     feature: "Website Strategy",
     typicalAgency: "Design-first brochure site",
-    vectorLabs: "Conversion-focused treatment and booking architecture",
+    vectorLabs: "Conversion-focused service and conversion architecture",
   },
   {
     feature: "SEO Approach",
     typicalAgency: "Basic keywords and blog output",
-    vectorLabs: "Treatment, city, Maps, and trust-based local SEO",
+    vectorLabs: "Service, city, Maps, and trust-based local SEO",
   },
   {
-    feature: "Booking Flow",
-    typicalAgency: "Simple contact form or generic booking link",
-    vectorLabs: "Guided mobile-first consultation funnel",
+    feature: "Conversion Flow",
+    typicalAgency: "Simple contact form or generic conversion link",
+    vectorLabs: "Guided mobile-first conversion funnel",
   },
   {
     feature: "Automation",
@@ -29,7 +29,7 @@ export const comparisonRows: ComparisonRow[] = [
   {
     feature: "Conversion Tracking",
     typicalAgency: "Limited visibility after launch",
-    vectorLabs: "Lead source, funnel, and booking performance reporting",
+    vectorLabs: "Lead source, funnel, and conversion performance reporting",
   },
   {
     feature: "Post-Launch Growth",
@@ -39,11 +39,11 @@ export const comparisonRows: ComparisonRow[] = [
   {
     feature: "Visual Positioning",
     typicalAgency: "Looks decent but interchangeable",
-    vectorLabs: "Premium clinic-specific brand presence",
+    vectorLabs: "Premium business-specific brand presence",
   },
   {
     feature: "UX",
     typicalAgency: "Standard templates and default flows",
-    vectorLabs: "Calm, fast, mobile-first patient journeys",
+    vectorLabs: "Calm, fast, mobile-first client journeys",
   },
 ];

@@ -24,7 +24,7 @@ export default function PageNextStep({
   secondaryLabel,
 }: PageNextStepProps) {
   return (
-    <Section className="bg-bg-base">
+    <Section>
       <Container width="narrow">
         <Card tone="highlight" className="p-8 md:p-10">
           <SectionHeader

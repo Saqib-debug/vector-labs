@@ -9,11 +9,11 @@ import { comparisonRows } from "@/data/comparison";
 
 export default function Comparison() {
   return (
-    <Section id="comparison" className="border-t border-border-light bg-bg-base">
+    <Section id="comparison" className="border-t border-border-light">
       <Container width="narrow">
         <SectionHeader
           eyebrow="Comparison"
-          title="Why A Clinic-Specialist Agency Beats A Generic Web Agency"
+          title="Why A Business-Specialist Agency Beats A Generic Web Agency"
           description="The difference is not just better visuals. It is industry understanding, conversion flow, search strategy, automation, and post-launch growth thinking."
           align="center"
           className="mb-16"
@@ -33,7 +33,7 @@ export default function Comparison() {
             {comparisonRows.map((row, index) => (
               <AnimatedReveal key={row.feature} transition={{ duration: 0.5, delay: index * 0.08 }}>
                 <Card
-                  className="group grid grid-cols-1 items-center gap-4 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand/15 hover:bg-slate-50/[0.15] hover:shadow-[0_16px_36px_-12px_rgba(15,118,110,0.06)] md:grid-cols-12 md:gap-6 md:p-6"
+                  className="group grid grid-cols-1 items-center gap-4 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand/15 hover:bg-slate-50/[0.15] hover:shadow-[0_16px_36px_-12px_rgba(0,82,255,0.06)] md:grid-cols-12 md:gap-6 md:p-6"
                   id={`table-row-${index}`}
                 >
                   <div className="col-span-1 pl-2 md:col-span-4">
@@ -57,7 +57,7 @@ export default function Comparison() {
                     </div>
                   </div>
 
-                  <div className="col-span-1 flex items-start gap-3 rounded-2xl border border-brand/12 bg-brand/[0.03] p-4 shadow-[0_4px_12px_-4px_rgba(15,118,110,0.02)] transition-all duration-300 group-hover:border-brand/20 group-hover:bg-brand/[0.05] group-hover:shadow-[0_8px_24px_-6px_rgba(15,118,110,0.08)] md:col-span-4 md:p-5">
+                  <div className="col-span-1 flex items-start gap-3 rounded-2xl border border-brand/12 bg-brand/[0.03] p-4 shadow-[0_4px_12px_-4px_rgba(0,82,255,0.02)] transition-all duration-300 group-hover:border-brand/20 group-hover:bg-brand/[0.05] group-hover:shadow-[0_8px_24px_-6px_rgba(0,82,255,0.08)] md:col-span-4 md:p-5">
                     <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-brand/10">
                       <Check className="h-3 w-3 stroke-[2.5] text-brand" />
                     </div>

@@ -7,20 +7,20 @@ import {
 } from "@/lib/constants";
 
 export const footerServicesLinks: FooterLink[] = [
-  { name: "Clinic Website Design", href: "/services#website-design" },
-  { name: "Local SEO", href: "/services#local-seo" },
-  { name: "Google Profile Optimization", href: "/services#google-profile-optimization" },
-  { name: "AI Automation", href: "/services#ai-automation" },
-  { name: "Booking Systems", href: "/services#booking-systems" },
-  { name: "Paid Ads", href: "/services#paid-ads" },
+  { name: "Business Website Design", href: "/services/website-design" },
+  { name: "Local SEO", href: "/services/local-seo" },
+  { name: "Google Profile Optimization", href: "/services/google-profile-optimization" },
+  { name: "AI Automation", href: "/services/ai-automation" },
+  { name: "Conversion Systems", href: "/services/conversion-systems" },
+  { name: "Paid Ads", href: "/services/paid-ads" },
 ];
 
 export const footerIndustryLinks: FooterLink[] = [
-  { name: "Dental Clinics", href: "/dental-clinics" },
-  { name: "Aesthetic Clinics", href: "/aesthetic-clinics" },
-  { name: "Dermatology Clinics", href: "/contact" },
-  { name: "Cosmetic Clinics", href: "/contact" },
-  { name: "Private Healthcare", href: "/contact" },
+  { name: "Service Brands", href: "/service-businesses" },
+  { name: "Online Brands", href: "/online-businesses" },
+  { name: "SaaS Businesses", href: "/contact" },
+  { name: "Creator Businesses", href: "/contact" },
+  { name: "Startup Brands", href: "/contact" },
 ];
 
 export const footerCompanyLinks: FooterLink[] = [

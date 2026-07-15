@@ -15,33 +15,33 @@ export const challenges: ChallengeItem[] = [
   {
     icon: Target,
     title: "Low-Quality Inquiries",
-    subtitle: "Too many leads with weak treatment intent",
+    subtitle: "Too many leads with weak service intent",
     description:
-      "Not every inquiry is worth the team's time. Premium clinics need messaging and funnels that attract the right treatment intent, not just more form fills.",
+      "Not every inquiry is worth the team's time. Premium businesses need messaging and funnels that attract the right service intent, not just more form fills.",
     tag: "Lead Quality",
   },
   {
     icon: Globe,
     title: "Weak Google Visibility",
-    subtitle: "Hard to find on treatment and local intent searches",
+    subtitle: "Hard to find on service and local intent searches",
     description:
-      "When your clinic is invisible across local search and Maps, competitors win consultations before patients ever reach your brand.",
+      "When your business is invisible across local search and Maps, competitors win conversions before clients ever reach your brand.",
     tag: "Search Presence",
   },
   {
     icon: MonitorOff,
     title: "Outdated Website Design",
-    subtitle: "Premium care presented through a weak first impression",
+    subtitle: "Premium value presented through a weak first impression",
     description:
-      "A generic-looking website makes premium treatments feel less trustworthy. Design quality directly affects perceived expertise and consultation confidence.",
+      "A generic-looking website makes premium services feel less trustworthy. Design quality directly affects perceived expertise and conversion confidence.",
     tag: "Visual Positioning",
   },
   {
     icon: MousePointerClick,
-    title: "Poor Mobile Booking Flow",
-    subtitle: "Patients drop before they complete the next step",
+    title: "Poor Mobile Conversion Flow",
+    subtitle: "Clients drop before they complete the next step",
     description:
-      "If the booking experience feels clunky on mobile, high-intent patients hesitate, abandon, or switch to a clinic with a cleaner process.",
+      "If the conversion experience feels clunky on mobile, high-intent clients hesitate, abandon, or switch to a business with a cleaner process.",
     tag: "Conversion Flow",
   },
   {
@@ -49,15 +49,15 @@ export const challenges: ChallengeItem[] = [
     title: "Manual Admin & Follow-Up",
     subtitle: "Too much work happening by hand after the inquiry",
     description:
-      "Scheduling back-and-forth, inconsistent WhatsApp replies, and forgotten follow-ups make premium clinics feel disorganized and lose revenue.",
+      "Scheduling back-and-forth, inconsistent sales replies, and forgotten follow-ups make premium businesses feel disorganized and lose revenue.",
     tag: "Operations",
   },
   {
     icon: ShieldCheck,
-    title: "Low Patient Trust",
-    subtitle: "Weak authority around high-value procedures",
+    title: "Low Client Trust",
+    subtitle: "Weak authority around high-value offers",
     description:
-      "Reviews, treatment pages, doctor positioning, and digital polish all shape whether a patient believes your clinic is worth the consultation.",
+      "Reviews, service pages, founder positioning, and digital polish all shape whether a client believes your business is worth the conversion.",
     tag: "Trust Signals",
   },
   {
@@ -65,15 +65,15 @@ export const challenges: ChallengeItem[] = [
     title: "No Tracking Or Attribution",
     subtitle: "No visibility into what is actually driving growth",
     description:
-      "Without clear attribution, clinics cannot tell which channels, pages, or campaigns are creating real consultation demand and which are wasting budget.",
+      "Without clear attribution, businesses cannot tell which channels, pages, or campaigns are creating real conversion demand and which are wasting budget.",
     tag: "Analytics",
   },
   {
     icon: SearchX,
     title: "Generic Agency Strategy",
-    subtitle: "Tactics built without clinic-specific understanding",
+    subtitle: "Tactics built without business-specific understanding",
     description:
-      "Most agencies treat clinics like any other business. Vector Labs builds around high-ticket treatment trust, booking friction, and patient acquisition reality.",
+      "Most agencies treat businesses like any other business. Vector Labs builds around high-ticket service trust, conversion friction, and client acquisition reality.",
     tag: "Specialization",
   },
 ];
