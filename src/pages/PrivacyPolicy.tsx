@@ -1,7 +1,6 @@
 import Card from "@/components/ui/Card";
 import Container from "@/components/ui/Container";
 import PageHero from "@/components/ui/PageHero";
-import PageNextStep from "@/components/ui/PageNextStep";
 import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
 
@@ -49,14 +48,6 @@ export default function PrivacyPolicyPage() {
         </Container>
       </Section>
 
-      <PageNextStep
-        title="If you are ready, move into the strategy intake"
-        description="The policy page should still give visitors a natural next action instead of becoming a dead end."
-        primaryHref="/contact?source=privacy-policy"
-        primaryLabel="Book Strategy Call"
-        secondaryHref="/services"
-        secondaryLabel="Explore Services"
-      />
     </>
   );
 }

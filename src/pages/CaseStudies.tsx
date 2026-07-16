@@ -5,7 +5,6 @@ import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import Container from "@/components/ui/Container";
 import PageHero from "@/components/ui/PageHero";
-import PageNextStep from "@/components/ui/PageNextStep";
 import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { caseStudyCatalog, featuredCaseStudy } from "@/data/caseStudies";
@@ -18,7 +17,9 @@ export default function CaseStudiesPage() {
         eyebrow="Case Studies"
         title="Proof structured the way a serious business website should present it."
         description="This page turns proof into its own destination: featured work, case study cards, metrics, and a clearer explanation of how Vector Labs measures success."
+        eyebrowClassName="text-xs font-semibold uppercase tracking-[0.2em] text-brand"
         titleClassName="max-w-4xl text-4xl font-bold tracking-tight text-black sm:text-5xl lg:text-6xl"
+        descriptionClassName="max-w-3xl text-base leading-relaxed text-slate-700 sm:text-lg"
       >
         <div className="pt-4">
           <Button href="/contact" icon={<ArrowUpRight className="h-4 w-4" />}>
@@ -138,15 +139,6 @@ export default function CaseStudiesPage() {
           </div>
         </Container>
       </Section>
-
-      <PageNextStep
-        title="Use the proof to decide your next conversation"
-        description="If the structure and results feel aligned, the next step is either to review the process or send a strategy request for a similar business growth system."
-        primaryHref="/contact?mainGoal=Full%20growth%20system&source=case-studies-page"
-        primaryLabel="Book Strategy Call"
-        secondaryHref="/#process"
-        secondaryLabel="Review Process"
-      />
 
       <CTA />
     </>

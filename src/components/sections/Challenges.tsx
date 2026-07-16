@@ -296,17 +296,18 @@ function ChallengeExplanationWindow({
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
-      className="relative w-full max-w-[540px] overflow-hidden rounded-[2rem] border border-brand/[0.18] bg-white p-7 shadow-[0_32px_90px_-48px_rgba(0,82,255,0.55)]"
+      className="relative w-full max-w-[540px] overflow-hidden rounded-[2rem] border border-blue-400/20 bg-[#061633] p-7 shadow-[0_32px_90px_-48px_rgba(0,82,255,0.75)]"
     >
-      <div className="pointer-events-none absolute right-0 top-0 h-44 w-44 translate-x-1/3 -translate-y-1/3 rounded-full bg-brand/10 blur-3xl" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,82,255,0.3),transparent_34%)]" />
+      <div className="pointer-events-none absolute right-0 top-0 h-44 w-44 translate-x-1/3 -translate-y-1/3 rounded-full bg-blue-400/20 blur-3xl" />
       <div className="relative z-10">
-        <div className="mb-7 flex items-center gap-4 border-b border-brand/10 pb-6">
-          <div className="flex h-[3.25rem] w-[3.25rem] items-center justify-center rounded-2xl border border-brand/15 bg-brand/[0.07] text-brand shadow-[0_12px_30px_-22px_rgba(0,82,255,0.8)]">
+        <div className="mb-7 flex items-center gap-4 border-b border-white/10 pb-6">
+          <div className="flex h-[3.25rem] w-[3.25rem] items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-blue-200 shadow-[0_12px_30px_-22px_rgba(0,82,255,0.8)]">
             <IconComponent className="h-6 w-6" />
           </div>
           <div>
-            <p className="font-mono text-[9px] font-bold uppercase tracking-[0.2em] text-brand">Module {index + 1}</p>
-            <h3 className="mt-1 text-xl font-bold text-heading">{item.title}</h3>
+            <p className="font-mono text-[9px] font-bold uppercase tracking-[0.2em] text-blue-200">Module {index + 1}</p>
+            <h3 className="mt-1 text-xl font-bold text-white">{item.title}</h3>
           </div>
         </div>
 
@@ -327,7 +328,7 @@ function ChallengeExplanationWindow({
           </div>
         </div>
 
-        <p className="mt-5 text-center text-[10px] font-bold uppercase tracking-widest text-brand/60">
+        <p className="mt-5 text-center text-[10px] font-bold uppercase tracking-widest text-blue-200/70">
           Live Business Interface
         </p>
       </div>

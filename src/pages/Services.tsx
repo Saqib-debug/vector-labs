@@ -5,7 +5,6 @@ import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import Container from "@/components/ui/Container";
 import PageHero from "@/components/ui/PageHero";
-import PageNextStep from "@/components/ui/PageNextStep";
 import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { serviceDetails, servicePackages } from "@/data/services";
@@ -54,43 +53,6 @@ export default function ServicesPage() {
       <Section className="bg-[#3a3a3a]">
         <Container>
           <SectionHeader
-            eyebrow="Service Grid"
-            title="The full offer at a glance"
-            description="Every service is part of the same business growth system, but each can also solve a specific bottleneck around visibility, trust, follow-up, or conversion."
-            className="mb-16"
-          />
-
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {serviceDetails.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <Card
-                  key={service.id}
-                  id={service.id}
-                  className="group flex h-full flex-col p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand/15 hover:shadow-[0_18px_34px_-16px_rgba(0,82,255,0.18)]"
-                >
-                  <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl bg-brand/10 text-brand transition-transform duration-300 group-hover:scale-105">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">
-                    Service {String(index + 1).padStart(2, "0")}
-                  </div>
-                  <h3 className="mt-2 text-lg font-bold text-black">{service.title}</h3>
-                  <p className="mt-3 min-h-[3.75rem] text-sm leading-relaxed text-body">{service.summary}</p>
-                  <a href={`/services/${service.id}`} className="mt-6 inline-flex items-center text-sm font-semibold text-brand">
-                    View service page
-                    <ArrowUpRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </a>
-                </Card>
-              );
-            })}
-          </div>
-        </Container>
-      </Section>
-
-      <Section className="bg-[#3a3a3a]">
-        <Container>
-          <SectionHeader
             eyebrow="Detailed Service Blocks"
             title="What each service actually includes"
             description="The goal here is clarity. Visitors should understand the scope of the offer without needing a call just to figure out what Vector Labs does."
@@ -116,10 +78,10 @@ export default function ServicesPage() {
                     <p className="mt-4 text-sm leading-relaxed text-slate-500">{intro}</p>
                     <div className="mt-6">
                       <Button
-                        href={`/contact?service=${encodeURIComponent(service.title)}&mainGoal=${encodeURIComponent("Full growth system")}`}
+                        href={`/services/${service.id}`}
                         size="sm"
                       >
-                        Talk about this service
+                        Explore Service
                       </Button>
                     </div>
                   </div>
@@ -186,15 +148,6 @@ export default function ServicesPage() {
           </div>
         </Container>
       </Section>
-
-      <PageNextStep
-        title="Choose the service stack that matches your biggest bottleneck"
-        description="If one service stood out, the fastest next step is to send a strategy request with that context so the conversation starts from the right place."
-        primaryHref="/contact?mainGoal=Full%20growth%20system&source=services-page"
-        primaryLabel="Book Strategy Call"
-        secondaryHref="/case-studies"
-        secondaryLabel="See Related Proof"
-      />
 
       <CTA />
     </>

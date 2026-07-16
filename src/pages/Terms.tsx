@@ -1,7 +1,6 @@
 import Card from "@/components/ui/Card";
 import Container from "@/components/ui/Container";
 import PageHero from "@/components/ui/PageHero";
-import PageNextStep from "@/components/ui/PageNextStep";
 import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
 
@@ -49,14 +48,6 @@ export default function TermsPage() {
         </Container>
       </Section>
 
-      <PageNextStep
-        title="Use the site terms as context, then continue the conversation"
-        description="Even legal pages should point visitors back into a sensible next step instead of leaving them at a dead end."
-        primaryHref="/contact?source=terms-page"
-        primaryLabel="Book Strategy Call"
-        secondaryHref="/about"
-        secondaryLabel="Learn About Vector Labs"
-      />
     </>
   );
 }

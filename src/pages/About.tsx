@@ -4,7 +4,6 @@ import CTA from "@/components/sections/CTA";
 import Card from "@/components/ui/Card";
 import Container from "@/components/ui/Container";
 import PageHero from "@/components/ui/PageHero";
-import PageNextStep from "@/components/ui/PageNextStep";
 import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { processSteps } from "@/data/process";
@@ -16,7 +15,9 @@ export default function AboutPage() {
         eyebrow="About"
         title="Why Vector Labs exists and why business growth needs specialized systems."
         description="This page gives the brand more credibility by explaining the agency philosophy, design thinking, technology principles, and process behind the work."
+        eyebrowClassName="text-xs font-semibold uppercase tracking-[0.2em] text-brand"
         titleClassName="max-w-4xl text-4xl font-bold tracking-tight text-black sm:text-5xl lg:text-6xl"
+        descriptionClassName="max-w-3xl text-base leading-relaxed text-slate-700 sm:text-lg"
       />
 
       <Section id="process-overview">
@@ -86,15 +87,6 @@ export default function AboutPage() {
           </div>
         </Container>
       </Section>
-
-      <PageNextStep
-        title="If the philosophy fits, the next step is seeing how it applies to your business"
-        description="Vector Labs is most useful when the strategy, process, and specialization feel aligned. From here, move into a strategy call or review service scope."
-        primaryHref="/contact?mainGoal=Full%20growth%20system&source=about-page"
-        primaryLabel="Book Strategy Call"
-        secondaryHref="/services"
-        secondaryLabel="Explore Services"
-      />
 
       <CTA />
     </>

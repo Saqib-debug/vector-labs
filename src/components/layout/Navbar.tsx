@@ -223,9 +223,9 @@ export default function Navbar() {
 
         <button
           className={cn(
-            "relative z-50 rounded-full border border-transparent bg-transparent p-2 text-brand transition-all duration-300 hover:border-brand/15 hover:bg-white/70 md:hidden",
-            scrolled && !isOpen && "border-white/30 bg-white text-brand shadow-sm hover:bg-white",
-            isOpen && "border-slate-200 bg-white text-slate-950",
+            "relative z-50 rounded-full bg-transparent p-2 text-brand transition-all duration-300 hover:bg-white/70 md:hidden",
+            scrolled && !isOpen && "bg-transparent text-white hover:bg-white/10",
+            isOpen && "bg-white text-slate-950",
           )}
           onClick={() => setIsOpen((open) => !open)}
           aria-label="Toggle navigation menu"

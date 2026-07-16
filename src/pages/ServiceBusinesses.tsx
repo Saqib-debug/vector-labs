@@ -5,7 +5,6 @@ import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import Container from "@/components/ui/Container";
 import PageHero from "@/components/ui/PageHero";
-import PageNextStep from "@/components/ui/PageNextStep";
 import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { supportingCaseStudy } from "@/data/caseStudies";
@@ -217,15 +216,6 @@ export default function ServiceBusinessesPage() {
           </Card>
         </Container>
       </Section>
-
-      <PageNextStep
-        title="See how this applies to your service business"
-        description="A strong next step for service owners is to review the proof and then send a strategy request with service-specific context already selected."
-        primaryHref="/case-studies"
-        primaryLabel="Review Case Studies"
-        secondaryHref="/contact?businessType=Service%20Business&mainGoal=More%20client%20conversions&source=service-next-step"
-        secondaryLabel="Book Strategy Call"
-      />
 
       <CTA />
     </>

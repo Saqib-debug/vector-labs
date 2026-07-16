@@ -136,7 +136,7 @@ function AppContent() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#f5f5f5] pb-24 text-body antialiased selection:bg-brand/10 selection:text-brand md:pb-0">
       <Navbar />
-      <AnimatePresence mode="wait" initial={false}>
+      <AnimatePresence mode="wait">
         <motion.main
           key={pathname}
           id="main-content"

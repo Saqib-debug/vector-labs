@@ -5,7 +5,6 @@ import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import Container from "@/components/ui/Container";
 import PageHero from "@/components/ui/PageHero";
-import PageNextStep from "@/components/ui/PageNextStep";
 import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { featuredCaseStudy } from "@/data/caseStudies";
@@ -180,15 +179,6 @@ export default function OnlineBusinessesPage() {
           </div>
         </Container>
       </Section>
-
-      <PageNextStep
-        title="Turn premium positioning into a cleaner conversion flow"
-        description="Online business owners usually want to see the service stack next, then move into a strategy request with brand and conversion context already carried over."
-        primaryHref="/services"
-        primaryLabel="Explore Services"
-        secondaryHref="/contact?businessType=Online%20Business&mainGoal=More%20client%20conversions&source=online-next-step"
-        secondaryLabel="Book Strategy Call"
-      />
 
       <CTA />
     </>
