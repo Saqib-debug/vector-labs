@@ -568,13 +568,13 @@ function TrustVisual() {
 
 function TrackingVisual() {
   return (
-    <div className="mx-auto w-full max-w-[340px] rounded-2xl border border-slate-800 bg-slate-950 p-4 text-[9px] text-slate-400 shadow-xl">
-      <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+    <div className="mx-auto w-full max-w-[340px] rounded-2xl border border-slate-100 bg-white p-4 text-[9px] text-slate-600 shadow-md">
+      <div className="flex items-center justify-between border-b border-slate-100 pb-3">
         <div>
-          <div className="font-bold text-white">Growth Dashboard</div>
-          <div className="text-[7px] text-slate-500">Live acquisition tracker</div>
+          <div className="font-bold text-slate-900">Growth Dashboard</div>
+          <div className="text-[7px] text-slate-400">Live acquisition tracker</div>
         </div>
-        <span className="rounded bg-brand/20 px-2 py-1 text-[7px] font-bold text-brand">TRACKING</span>
+        <span className="rounded bg-brand/10 px-2 py-1 text-[7px] font-bold text-brand">TRACKING</span>
       </div>
       <div className="mt-4 grid grid-cols-3 gap-2">
         {[
@@ -582,9 +582,9 @@ function TrackingVisual() {
           ["ROI", "5.2x", "+11%"],
           ["Rate", "9.4%", "+4.2%"],
         ].map(([label, value, delta]) => (
-          <div key={label} className="rounded-xl border border-slate-800 bg-slate-900/70 p-3">
-            <div className="text-[7px] uppercase tracking-wider text-slate-500">{label}</div>
-            <div className="mt-1 text-[13px] font-bold text-white">{value}</div>
+          <div key={label} className="rounded-xl border border-slate-100 bg-white p-3 shadow-sm">
+            <div className="text-[7px] uppercase tracking-wider text-slate-400">{label}</div>
+            <div className="mt-1 text-[13px] font-bold text-slate-900">{value}</div>
             <div className="mt-1 flex items-center gap-1 text-[7px] font-bold text-blue-400">
               <TrendingUp className="h-2.5 w-2.5" />
               {delta}
@@ -592,9 +592,9 @@ function TrackingVisual() {
           </div>
         ))}
       </div>
-      <div className="mt-4 rounded-xl border border-slate-800 bg-slate-900/60 p-3">
+      <div className="mt-4 rounded-xl border border-slate-100 bg-white p-3 shadow-sm">
         <div className="mb-3 flex items-center justify-between">
-          <span className="font-bold text-slate-200">Conversions by channel</span>
+          <span className="font-bold text-slate-900">Conversions by channel</span>
           <BarChart3 className="h-3.5 w-3.5 text-brand" />
         </div>
         {[
@@ -607,7 +607,7 @@ function TrackingVisual() {
               <span>{label}</span>
               <span className="text-brand">{width}</span>
             </div>
-            <div className="h-1.5 rounded-full bg-slate-800">
+            <div className="h-1.5 rounded-full bg-slate-200">
               <div className="h-full rounded-full bg-brand shadow-[0_0_12px_rgba(0,82,255,0.55)]" style={{ width }} />
             </div>
           </div>
@@ -644,12 +644,12 @@ function StrategyVisual() {
           </div>
         ))}
       </div>
-      <div className="mt-4 rounded-xl bg-slate-950 p-3 text-white">
+      <div className="mt-4 rounded-xl border border-slate-100 bg-slate-50 p-3 text-slate-900">
         <div className="flex items-center justify-between">
           <span className="font-bold">Next priority selected</span>
           <ArrowUpRight className="h-3.5 w-3.5 text-brand" />
         </div>
-        <div className="mt-2 text-[7.5px] text-slate-400">Build the growth sequence before buying more traffic.</div>
+        <div className="mt-2 text-[7.5px] text-slate-500">Build the growth sequence before buying more traffic.</div>
       </div>
     </div>
   );

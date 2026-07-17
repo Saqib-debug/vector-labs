@@ -195,7 +195,7 @@ export default function ServiceDetailPage({ serviceId }: ServiceDetailPageProps)
         eyebrow="Service Not Found"
         title="This service page is not available"
         description="The service you are looking for may have moved. You can return to the full services overview to explore the current offer."
-        className="bg-[#3a3a3a] pt-28 pb-6 md:pt-32 md:pb-8 lg:pt-36 lg:pb-10"
+        className="flex min-h-screen items-center bg-[#3a3a3a] pt-28 pb-6 md:pt-32 md:pb-8 lg:pt-36 lg:pb-10"
         eyebrowClassName="text-xs font-semibold uppercase tracking-[0.2em] text-brand"
         titleClassName="max-w-4xl text-4xl font-bold tracking-tight text-black sm:text-5xl lg:text-6xl"
         descriptionClassName="max-w-3xl text-base leading-relaxed text-slate-900 sm:text-lg"
@@ -219,7 +219,7 @@ export default function ServiceDetailPage({ serviceId }: ServiceDetailPageProps)
         eyebrow="Service"
         title={service.title}
         description={service.description}
-        className="bg-[#3a3a3a] pt-28 pb-3 md:pt-32 md:pb-4 lg:pt-36 lg:pb-5"
+        className="flex min-h-screen items-center bg-[#3a3a3a] pt-28 pb-3 md:pt-32 md:pb-4 lg:pt-36 lg:pb-5"
         eyebrowClassName="text-xs font-semibold uppercase tracking-[0.2em] text-brand"
         titleClassName="max-w-4xl text-4xl font-bold tracking-tight text-black sm:text-5xl lg:text-6xl"
         descriptionClassName="max-w-3xl text-base leading-relaxed text-slate-900 sm:text-lg"

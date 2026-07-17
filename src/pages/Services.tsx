@@ -35,7 +35,7 @@ export default function ServicesPage() {
         eyebrow="Services"
         title="Business Growth Services Built Around Visibility, Trust, And Conversions"
         description="This page is designed to make the full offer easy to understand. Each service block explains what Vector Labs handles and how it fits into a premium business growth system."
-        className="bg-[#3a3a3a] pt-28 md:pt-32 lg:pt-36"
+        className="flex min-h-screen items-center bg-[#3a3a3a] pt-28 md:pt-32 lg:pt-36"
         eyebrowClassName="text-xs font-semibold uppercase tracking-[0.2em] text-brand"
         titleClassName="max-w-4xl text-4xl font-bold tracking-tight text-black sm:text-5xl lg:text-6xl"
         descriptionClassName="max-w-3xl text-base leading-relaxed text-slate-900 sm:text-lg"

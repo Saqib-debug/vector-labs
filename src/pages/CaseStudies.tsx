@@ -17,6 +17,7 @@ export default function CaseStudiesPage() {
         eyebrow="Case Studies"
         title="Proof structured the way a serious business website should present it."
         description="This page turns proof into its own destination: featured work, case study cards, metrics, and a clearer explanation of how Vector Labs measures success."
+        className="flex min-h-screen items-center pt-28 md:pt-32 lg:pt-36"
         eyebrowClassName="text-xs font-semibold uppercase tracking-[0.2em] text-brand"
         titleClassName="max-w-4xl text-4xl font-bold tracking-tight text-black sm:text-5xl lg:text-6xl"
         descriptionClassName="max-w-3xl text-base leading-relaxed text-slate-700 sm:text-lg"

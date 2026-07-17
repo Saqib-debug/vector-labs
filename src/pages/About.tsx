@@ -15,6 +15,7 @@ export default function AboutPage() {
         eyebrow="About"
         title="Why Vector Labs exists and why business growth needs specialized systems."
         description="This page gives the brand more credibility by explaining the agency philosophy, design thinking, technology principles, and process behind the work."
+        className="flex min-h-screen items-center pt-28 md:pt-32 lg:pt-36"
         eyebrowClassName="text-xs font-semibold uppercase tracking-[0.2em] text-brand"
         titleClassName="max-w-4xl text-4xl font-bold tracking-tight text-black sm:text-5xl lg:text-6xl"
         descriptionClassName="max-w-3xl text-base leading-relaxed text-slate-700 sm:text-lg"
